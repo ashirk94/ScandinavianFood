@@ -1,0 +1,46 @@
+﻿@model ForumPostModel
+
+@{
+    ViewData["Title"] = "Forum";
+}
+<div class="text-center m-auto" id="back-blue">
+    <h1 class="display-4">Forum</h1>
+
+    <br />
+
+    <form asp-controller="Home" method="post">
+        <p>Comment:</p>
+        <textarea class="col-6" asp-for="Text">Add a public comment...</textarea>
+        <br /><br />
+        <span class="m-1">User:</span>
+        <input class="col-4"asp-for="User">
+        <span class="m-1">Rating:</span>
+        <input class="col-2" asp-for="Rating">
+        <br /><br />
+        <button type="submit" class="btn btn-primary mb-3 col-4">Comment</button>
+    </form>
+</div>
+<br />
+<div class="row justify-content-center col-8 m-auto" id="back-grey">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <tr>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Date/Time</th>
+                <th>Rating</th>
+                <th>Page</th>
+            </tr>
+            @foreach (var post in ViewBag.posts)
+            {
+                <tr>
+                    <td>@post.User</td>
+                    <td>@post.Text</td>
+                    <td>@post.PostDate</td>
+                    <td>@post.Rating</td>
+                    <td>@post.Page</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
