@@ -23,12 +23,13 @@ namespace ScandinavianFood.Controllers
             postData = postRep;
             userData = userRep;
         }
-        //using repos
+        //using viewmodels
         public IActionResult Index()
         {
-            var users = from user in userData.GetAll()select user;
-            ViewBag.Users = users;
-            return View();
+            List<UserModel> users = userData.GetAll().ToList();
+            UserViewModel viewModel = new UserViewModel();
+            viewModel.Users = users;
+            return View(viewModel);
         }
 
         public IActionResult Overview()
@@ -39,18 +40,21 @@ namespace ScandinavianFood.Controllers
         [HttpGet]
         public IActionResult Forum()
         {
-            //adding models for users and forum posts
-            var users = from user in userData.GetAll() select user;
-            var posts = from post in postData.GetAll() select post;
-
-            ViewBag.users = users;
-            ViewBag.posts = posts;
+            List<ForumPostModel> posts = postData.GetAll().ToList();
+            ForumPostViewModel viewModel = new ForumPostViewModel();
+            viewModel.Posts = posts;
+            viewModel.Post = new ForumPostModel();
+            return View(viewModel);
+        }
+        [HttpGet]
+        public IActionResult AddUser()
+        {
             return View();
         }
         [HttpPost]
-        public IActionResult Index(UserModel user)
+        public IActionResult AddUser(UserModel user)
         {
-            try
+            if (ModelState.IsValid)
             {
                 if (user.Id == 0)
                     userData.Insert(user);
@@ -59,15 +63,17 @@ namespace ScandinavianFood.Controllers
                 userData.Save();
                 return RedirectToAction("Index", "Home");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult AddPost()
+        {
+            return View();
         }
         [HttpPost]
-        public IActionResult Forum(ForumPostModel post)
+        public IActionResult AddPost(ForumPostModel post)
         {
-            try
+            if (ModelState.IsValid)
             {
                 if (post.Id == 0)
                     postData.Insert(post);
@@ -76,10 +82,7 @@ namespace ScandinavianFood.Controllers
                 postData.Save();
                 return RedirectToAction("Forum", "Home");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

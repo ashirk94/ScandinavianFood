@@ -1,0 +1,13 @@
+﻿@model UserModel
+<br /><br /><br /><br />
+    <div class="text-center m-auto">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <form asp-controller="Home" method="post">
+            Name: <input asp-for="Name" />
+            <button class="btn btn-success" type="submit">Add User</button>
+        </form>
+    </div>
+
+
+

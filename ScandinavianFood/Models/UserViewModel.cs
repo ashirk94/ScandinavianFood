@@ -6,11 +6,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScandinavianFood.Models
 {
-    public class UserModel
+    public class UserViewModel : UserModel
     {
-        [StringLength(30, MinimumLength = 3)]
         [Required]
-        public string Name { get; set; }
-        public int Id { get; set; }
+        public UserModel User { get; set; }
+        [Required]
+        public IEnumerable<UserModel> Users { get; set; }
     }
 }
