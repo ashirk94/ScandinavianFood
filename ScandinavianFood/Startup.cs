@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood
 {
@@ -22,16 +23,19 @@ namespace ScandinavianFood
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        //service injections
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
 
+            //dbcontext
             services.AddDbContext<ForumPostContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("ForumPostContext")));
 
+            //repositories
             services.AddTransient(typeof(PostRepository), typeof(PostRepository));
             services.AddTransient(typeof(UserRepository), typeof(UserRepository));
+            //httpcontext
             services.AddHttpContextAccessor();
         }
 
