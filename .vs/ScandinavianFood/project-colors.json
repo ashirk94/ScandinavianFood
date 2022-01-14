@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0bed0d9f-c30d-432a-8cbf-a59a0b84b16f": {
+      "ProjectGuid": "0bed0d9f-c30d-432a-8cbf-a59a0b84b16f",
+      "DisplayName": "ScandinavianFood",
+      "ColorIndex": 0
+    },
+    "f2b04c07-fb76-408d-ac0f-ea5c669cf2ee": {
+      "ProjectGuid": "f2b04c07-fb76-408d-ac0f-ea5c669cf2ee",
+      "DisplayName": "UnitTests",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

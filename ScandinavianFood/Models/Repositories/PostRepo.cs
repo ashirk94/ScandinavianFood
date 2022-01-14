@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace ScandinavianFood.Models
+namespace ScandinavianFood.Models.Repositories
 {
     public class PostRepository : IRepository<ForumPostModel>
     {

@@ -9,21 +9,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.EntityFrameworkCore;
+using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood.Controllers
 {
     public class HomeController : Controller
     {
-
-        private ForumPostContext postContext { get; set; }
         private PostRepository postData { get; set; }
         private UserRepository userData { get; set; }
+        //initialize with repos
         public HomeController(PostRepository postRep, UserRepository userRep)
         {
             postData = postRep;
             userData = userRep;
         }
-        //using viewmodels
+        //viewmodel to see users
         public IActionResult Index()
         {
             List<UserModel> users = userData.GetAll().ToList();
@@ -36,7 +36,7 @@ namespace ScandinavianFood.Controllers
         {
             return View();
         }
-        //using repo
+        //viewModel to display posts
         [HttpGet]
         public IActionResult Forum()
         {
@@ -89,6 +89,7 @@ namespace ScandinavianFood.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //quiz actions
         [HttpGet]
         public IActionResult Quiz()
         {
