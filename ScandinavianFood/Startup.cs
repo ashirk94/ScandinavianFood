@@ -33,8 +33,8 @@ namespace ScandinavianFood
                 Configuration.GetConnectionString("ForumPostContext")));
 
             //repositories
-            services.AddTransient(typeof(PostRepository), typeof(PostRepository));
-            services.AddTransient(typeof(UserRepository), typeof(UserRepository));
+            services.AddTransient<IRepository<ForumPostModel>, PostRepository>();
+            services.AddTransient<IRepository<UserModel>, UserRepository>();
             //httpcontext
             services.AddHttpContextAccessor();
         }

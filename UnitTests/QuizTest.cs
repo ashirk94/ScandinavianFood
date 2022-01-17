@@ -9,12 +9,14 @@ namespace UnitTests
         [Fact]
         public void TestNumCorrect()
         {
-            var quiz = new QuizState();
+            var quiz = new QuizState()
+            {
+                //wrong answers
+                Answer1 = "A",
+                Answer2 = "C",
+                Answer3 = "B"
+            };
 
-            //wrong answers
-            quiz.Answer1 = "A";
-            quiz.Answer2 = "C";
-            quiz.Answer3 = "B";
             quiz.NumCorrect();
             Assert.True(quiz.Score == 0);
 

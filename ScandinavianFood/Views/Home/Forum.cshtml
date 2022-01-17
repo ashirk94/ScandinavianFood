@@ -1,10 +1,32 @@
-﻿@model ForumPostViewModel
+﻿@model IEnumerable<ForumPostModel>
 
 @{
     ViewData["Title"] = "Forum";
 }
 
-@await Html.PartialAsync("_ForumPostListPartial", Model.Posts)
+<div class="row justify-content-center col-8 m-auto" id="back-grey">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <tr>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Date/Time</th>
+                <th>Rating</th>
+                <th>Page</th>
+            </tr>
+            @foreach (var post in Model)
+            {
+                <tr>
+                    <td>@post.User</td>
+                    <td>@post.Text</td>
+                    <td>@post.PostDate</td>
+                    <td>@post.Rating</td>
+                    <td>@post.Page</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 
 <div  class="text-center m-auto">
     <a class="btn btn-success" href="/Home/AddPost">Create Post</a>

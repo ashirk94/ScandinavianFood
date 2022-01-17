@@ -8,7 +8,7 @@ namespace ScandinavianFood.Models.Repositories
 {
     public class PostRepository : IRepository<ForumPostModel>
     {
-        private ForumPostContext context;
+        private readonly ForumPostContext context;
 
         public PostRepository(ForumPostContext context)
         {

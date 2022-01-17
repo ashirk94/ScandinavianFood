@@ -1,4 +1,4 @@
-﻿@model UserViewModel
+﻿@model IEnumerable<UserModel>
 @{
     ViewData["Title"] = "Scandinavian Food";
 }
@@ -19,7 +19,19 @@
         <a href="/Home/Quiz" class="btn btn-lg btn-primary m-3 col-4">Quiz</a>
     </p>
 
-    @await Html.PartialAsync("_UserListPartial", Model.Users)
+    <div class="row justify-content-center">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <tr>
+                <th>Users:</th>
+                @foreach (var user in Model)
+                {
+                    <td>@user.Name</td>
+                }
+            </tr>
+        </table>
+    </div>
+</div>
     <br />
 
     <a class="btn btn-success" href="/Home/AddUser">Add User</a>
