@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace ScandinavianFood.Models
 {
     public class UserRepository : IRepository<UserModel>
     {
-        private ForumPostContext context;
+        private readonly ForumPostContext context;
 
         public UserRepository(ForumPostContext context)
         {

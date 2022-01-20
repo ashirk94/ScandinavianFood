@@ -1,50 +1,39 @@
-﻿using ScandinavianFood.Models;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
+using ScandinavianFood.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.EntityFrameworkCore;
-using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood.Controllers
 {
     public class HomeController : Controller
     {
-        private PostRepository postData { get; set; }
-        private UserRepository userData { get; set; }
+        private IRepository<ForumPostModel> PostData { get; set; }
+        private IRepository<UserModel> UserData { get; set; }
         //initialize with repos
-        public HomeController(PostRepository postRep, UserRepository userRep)
+        public HomeController(IRepository<ForumPostModel> postRep, IRepository<UserModel> userRep)
         {
-            postData = postRep;
-            userData = userRep;
+            PostData = postRep;
+            UserData = userRep;
         }
         //viewmodel to see users
         public IActionResult Index()
         {
-            List<UserModel> users = userData.GetAll().ToList();
-            UserViewModel viewModel = new UserViewModel();
-            viewModel.Users = users;
-            return View(viewModel);
+            List<UserModel> users = UserData.GetAll().ToList();
+            return View(users);
         }
 
         public IActionResult Overview()
         {
             return View();
         }
-        //viewModel to display posts
+        //forum
         [HttpGet]
         public IActionResult Forum()
         {
-            List<ForumPostModel> posts = postData.GetAll().ToList();
-            ForumPostViewModel viewModel = new ForumPostViewModel();
-            viewModel.Posts = posts;
-            viewModel.Post = new ForumPostModel();
-            return View(viewModel);
+            List<ForumPostModel> posts = PostData.GetAll().ToList();
+            return View(posts);
         }
         [HttpGet]
         public IActionResult AddUser()
@@ -57,10 +46,10 @@ namespace ScandinavianFood.Controllers
             if (ModelState.IsValid)
             {
                 if (user.Id == 0)
-                    userData.Insert(user);
+                    UserData.Insert(user);
                 else
-                    userData.Update(user);
-                userData.Save();
+                    UserData.Update(user);
+                UserData.Save();
                 return RedirectToAction("Index", "Home");
             }
             return View();
@@ -76,10 +65,10 @@ namespace ScandinavianFood.Controllers
             if (ModelState.IsValid)
             {
                 if (post.Id == 0)
-                    postData.Insert(post);
+                    PostData.Insert(post);
                 else
-                    postData.Update(post);
-                postData.Save();
+                    PostData.Update(post);
+                PostData.Save();
                 return RedirectToAction("Forum", "Home");
             }
             return View();

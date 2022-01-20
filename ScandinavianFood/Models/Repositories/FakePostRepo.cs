@@ -1,13 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using ScandinavianFood.Models.Repositories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ScandinavianFood.Models.Repositories
 {
     public class FakePostRepo : IRepository<ForumPostModel>
     {
-        private List<ForumPostModel> posts = new List<ForumPostModel>();
+        private readonly List<ForumPostModel> posts = new List<ForumPostModel>();
 
         public IEnumerable<ForumPostModel> GetAll()
         {

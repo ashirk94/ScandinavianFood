@@ -7863,8 +7863,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ashir\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ashir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7875,12 +7874,8 @@
       "packagesPath": "C:\\Users\\ashir\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\ashir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
