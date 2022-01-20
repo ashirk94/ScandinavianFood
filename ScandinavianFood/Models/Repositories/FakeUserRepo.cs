@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using ScandinavianFood.Models.Repositories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ScandinavianFood.Models.Repositories
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace ScandinavianFood.Models
 {
     public class ErrorViewModel

@@ -1,15 +1,9 @@
-﻿using ScandinavianFood.Models;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
+using ScandinavianFood.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.EntityFrameworkCore;
-using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood.Controllers
 {

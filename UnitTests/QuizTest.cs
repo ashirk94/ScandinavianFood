@@ -1,6 +1,5 @@
-using System;
-using Xunit;
 using ScandinavianFood.Models;
+using Xunit;
 
 namespace UnitTests
 {
