@@ -9,7 +9,7 @@ using ScandinavianFood.Models;
 
 namespace ScandinavianFood.Migrations
 {
-    [DbContext(typeof(ForumPostContext))]
+    [DbContext(typeof(SiteDbContext))]
     [Migration("20220110191737_InitialCreate")]
     partial class InitialCreate
     {

@@ -13,18 +13,17 @@ namespace UnitTests
         public void AddPostTest()
         {
             var fakePostRepo = new FakePostRepo();
-            var fakeUserRepo = new FakeUserRepo();
-            var controller = new HomeController(fakePostRepo, fakeUserRepo);
+            var controller = new HomeController(fakePostRepo);
 
             //example posts
-            var post1 = new ForumPostModel()
+            var post1 = new ForumPost()
             {
                 Text = "hello",
                 User = "Alan",
                 Rating = 4,
                 Id = 1
             };
-            var post2 = new ForumPostModel()
+            var post2 = new ForumPost()
             {
                 Text = "world",
                 User = "Alan",
@@ -39,7 +38,7 @@ namespace UnitTests
             var viewResult = (ViewResult)controller.Forum();
 
             //assert tests
-            var posts = (List<ForumPostModel>)viewResult.Model;
+            var posts = (List<ForumPost>)viewResult.Model;
             Assert.Equal(2, posts.Count);
             Assert.Equal(posts[0].Text, post1.Text);
             Assert.Equal(posts[1].Text, post2.Text);

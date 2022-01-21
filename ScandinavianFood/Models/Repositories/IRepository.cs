@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ScandinavianFood.Models
+namespace ScandinavianFood.Models.Repositories
 {
     public interface IRepository<T> where T : class
     {

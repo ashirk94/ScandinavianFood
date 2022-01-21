@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UserModel>
+﻿@model IEnumerable<User>
 @{
     ViewData["Title"] = "Scandinavian Food";
 }
@@ -24,11 +24,14 @@
         <table class="table table-responsive">
             <tr>
                 <th>Users:</th>
-                @foreach (var user in Model)
-                {
-                    <td>@user.Name</td>
-                }
-            </tr>
+                    @if (Model != null)
+                    {
+                        foreach (var user in Model)
+                        {
+                            <td>@user.Username</td>
+                        }
+                    }
+                </tr>
         </table>
     </div>
 </div>

@@ -3,37 +3,37 @@ using System.Collections.Generic;
 
 namespace ScandinavianFood.Models.Repositories
 {
-    public class PostRepository : IRepository<ForumPostModel>
+    public class PostRepo : IRepository<ForumPost>
     {
-        private readonly ForumPostContext context;
+        private readonly SiteDbContext context;
 
-        public PostRepository(ForumPostContext context)
+        public PostRepo(SiteDbContext context)
         {
             this.context = context;
         }
 
-        public IEnumerable<ForumPostModel> GetAll()
+        public IEnumerable<ForumPost> GetAll()
         {
             return context.ForumPosts;
         }
 
-        public ForumPostModel GetById(int id)
+        public ForumPost GetById(int id)
         {
             return context.ForumPosts.Find(id);
         }
 
-        public void Insert(ForumPostModel post)
+        public void Insert(ForumPost post)
         {
             context.ForumPosts.Add(post);
         }
 
         public void Delete(int id)
         {
-            ForumPostModel post = context.ForumPosts.Find(id);
+            ForumPost post = context.ForumPosts.Find(id);
             context.ForumPosts.Remove(post);
         }
 
-        public void Update(ForumPostModel post)
+        public void Update(ForumPost post)
         {
             context.Entry(post).State = EntityState.Modified;
         }

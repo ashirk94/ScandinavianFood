@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScandinavianFood.Models
 {
-    public class ForumPostModel
+    public class ForumPost
     {
         [StringLength(100, MinimumLength = 3)]
         [Required]

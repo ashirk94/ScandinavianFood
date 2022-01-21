@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScandinavianFood.Models;
 using ScandinavianFood.Models.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace ScandinavianFood
 {
@@ -24,14 +25,19 @@ namespace ScandinavianFood
             services.AddControllersWithViews();
 
             //dbcontext
-            services.AddDbContext<ForumPostContext>(options => options.UseSqlServer(
-                Configuration.GetConnectionString("ForumPostContext")));
+            services.AddDbContext<SiteDbContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("SiteDbContext")));
 
             //repositories
-            services.AddTransient<IRepository<ForumPostModel>, PostRepository>();
-            services.AddTransient<IRepository<UserModel>, UserRepository>();
+            services.AddTransient<IRepository<ForumPost>, PostRepo>();
+
             //httpcontext
             services.AddHttpContextAccessor();
+
+            //identity
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<SiteDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +57,9 @@ namespace ScandinavianFood
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //authentication and authorization
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

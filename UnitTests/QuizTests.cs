@@ -3,7 +3,7 @@ using Xunit;
 
 namespace UnitTests
 {
-    public class QuizTest
+    public class QuizTests
     {
         [Fact]
         public void TestNumCorrect()

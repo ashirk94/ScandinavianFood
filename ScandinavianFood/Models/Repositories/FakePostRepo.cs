@@ -2,22 +2,22 @@
 
 namespace ScandinavianFood.Models.Repositories
 {
-    public class FakePostRepo : IRepository<ForumPostModel>
+    public class FakePostRepo : IRepository<ForumPost>
     {
-        private readonly List<ForumPostModel> posts = new List<ForumPostModel>();
+        private readonly List<ForumPost> posts = new List<ForumPost>();
 
-        public IEnumerable<ForumPostModel> GetAll()
+        public IEnumerable<ForumPost> GetAll()
         {
             return posts;
         }
 
-        public ForumPostModel GetById(int id)
+        public ForumPost GetById(int id)
         {
-            ForumPostModel post = posts.Find(p => p.Id == id);
+            ForumPost post = posts.Find(p => p.Id == id);
             return post;
         }
 
-        public void Insert(ForumPostModel post)
+        public void Insert(ForumPost post)
         {
             post.Id = posts.Count;
             posts.Add(post);
@@ -25,11 +25,11 @@ namespace ScandinavianFood.Models.Repositories
 
         public void Delete(int id)
         {
-            ForumPostModel post = posts.Find(p => p.Id == id);
+            ForumPost post = posts.Find(p => p.Id == id);
             posts.Remove(post);
         }
 
-        public void Update(ForumPostModel post)
+        public void Update(ForumPost post)
         {
             int id = post.Id;
             post = posts.Find(p => p.Id == id);

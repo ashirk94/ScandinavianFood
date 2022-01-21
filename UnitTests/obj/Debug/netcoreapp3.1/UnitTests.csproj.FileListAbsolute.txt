@@ -30,8 +30,6 @@ C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\Unit
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
-C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -110,8 +108,6 @@ C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\Unit
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
-C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
-C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
@@ -486,3 +482,8 @@ C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\Unit
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.pdb
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.genruntimeconfig.cache
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
