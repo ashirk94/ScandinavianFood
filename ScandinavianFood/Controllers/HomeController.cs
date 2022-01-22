@@ -22,7 +22,7 @@ namespace ScandinavianFood.Controllers
         public IActionResult Index()
         {
             if (UserData == null) return View();
-            List<IdentityUser> users = UserData.Users.ToList();
+            List<User> users = UserData.Users.ToList();
             return View(users);
         }
 

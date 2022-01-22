@@ -7,6 +7,6 @@ namespace ScandinavianFood.Models
     {
         [StringLength(30, MinimumLength = 3)]
         [Required]
-        public string Username { get; set; }
+        public string FirstName { get; set; }
     }
 }
