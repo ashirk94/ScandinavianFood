@@ -40,28 +40,11 @@ namespace ScandinavianFood.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(maxLength: 30, nullable: false)
+                    FirstName = table.Column<string>(maxLength: 30, nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ForumPosts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Text = table.Column<string>(maxLength: 100, nullable: false),
-                    PostDate = table.Column<DateTime>(nullable: false),
-                    Page = table.Column<string>(nullable: true),
-                    Rating = table.Column<int>(nullable: false),
-                    User = table.Column<string>(maxLength: 15, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ForumPosts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -170,6 +153,29 @@ namespace ScandinavianFood.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ForumPosts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Text = table.Column<string>(maxLength: 100, nullable: false),
+                    PostDate = table.Column<DateTime>(nullable: false),
+                    Page = table.Column<string>(nullable: true),
+                    Rating = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ForumPosts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ForumPosts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -208,6 +214,11 @@ namespace ScandinavianFood.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ForumPosts_UserId",
+                table: "ForumPosts",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

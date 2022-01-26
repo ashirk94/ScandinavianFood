@@ -15,6 +15,6 @@ namespace ScandinavianFood.Models
         public int Rating { get; set; }
         [StringLength(15, MinimumLength = 3)]
         [Required]
-        public string User { get; set; }
+        public User User { get; set; }
     }
 }

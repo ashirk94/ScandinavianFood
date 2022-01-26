@@ -6,7 +6,6 @@ namespace ScandinavianFood.Models
     public class User : IdentityUser
     {
         [StringLength(30, MinimumLength = 3)]
-        [Required]
         public string FirstName { get; set; }
     }
 }
