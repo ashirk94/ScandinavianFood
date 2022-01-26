@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
-using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers
 {
@@ -10,7 +9,7 @@ namespace ScandinavianFood.Controllers
     {
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
-        
+
         public AccountController(UserManager<User> userMngr, SignInManager<User> signInMngr)
         {
             userManager = userMngr;

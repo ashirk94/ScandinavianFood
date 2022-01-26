@@ -5,14 +5,13 @@ using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Microsoft.AspNetCore.Identity;
 
 namespace ScandinavianFood.Controllers
 {
     public class HomeController : Controller
     {
         private IRepository<ForumPost> PostData { get; set; }
-        private readonly SiteDbContext UserData;
+
         //initialize with repo
         public HomeController(IRepository<ForumPost> postRep)
         {
@@ -41,6 +40,7 @@ namespace ScandinavianFood.Controllers
         [HttpPost]
         public IActionResult AddPost(ForumPost post)
         {
+            //check if user is logged in
             if (HttpContext.User.Identity.Name != null)
             {
                 post.User = HttpContext.User.Identity.Name;
@@ -49,7 +49,7 @@ namespace ScandinavianFood.Controllers
             {
                 post.User = "Anonymous";
             }
-
+            //if valid post
             if (ModelState.IsValid)
             {
                 if (post.Id == 0)

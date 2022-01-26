@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ScandinavianFood.Controllers;
-using ScandinavianFood.Models;
-using ScandinavianFood.Models.Repositories;
-using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace UnitTests
 {
