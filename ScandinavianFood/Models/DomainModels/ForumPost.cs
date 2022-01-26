@@ -13,8 +13,6 @@ namespace ScandinavianFood.Models
         public string Page { get; set; } = "Forum";
         [Range(1, 5)]
         public int Rating { get; set; }
-        [StringLength(15, MinimumLength = 3)]
-        [Required]
-        public User User { get; set; }
+        public string User { get; set; } = "Anonymous";
     }
 }

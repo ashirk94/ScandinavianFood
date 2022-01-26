@@ -6,6 +6,11 @@
     <UserSecretsId>e615d7a7-332d-4230-bcbc-c7a00478c4eb</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220126224953_IdentityUser.cs" />
+    <Compile Remove="Migrations\20220126224953_IdentityUser.Designer.cs" />
+  </ItemGroup>
 	            
 
   <ItemGroup>

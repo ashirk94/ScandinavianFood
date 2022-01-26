@@ -18,14 +18,10 @@ namespace ScandinavianFood.Controllers
         {
             PostData = postRep;
         }
-        //viewmodel to see users
         public IActionResult Index()
         {
-            if (UserData == null) return View();
-            List<User> users = UserData.Users.ToList();
-            return View(users);
+            return View();
         }
-
         public IActionResult Overview()
         {
             return View();
@@ -38,22 +34,6 @@ namespace ScandinavianFood.Controllers
             return View(posts);
         }
         [HttpGet]
-        public IActionResult AddUser()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult AddUser(User user)
-        {
-            if (ModelState.IsValid)
-            {
-                UserData.Add(user);
-                UserData.SaveChanges();
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
-        }
-        [HttpGet]
         public IActionResult AddPost()
         {
             return View();
@@ -61,6 +41,15 @@ namespace ScandinavianFood.Controllers
         [HttpPost]
         public IActionResult AddPost(ForumPost post)
         {
+            if (HttpContext.User.Identity.Name != null)
+            {
+                post.User = HttpContext.User.Identity.Name;
+            }
+            else
+            {
+                post.User = "Anonymous";
+            }
+
             if (ModelState.IsValid)
             {
                 if (post.Id == 0)
