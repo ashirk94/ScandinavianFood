@@ -5,27 +5,22 @@ using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Microsoft.AspNetCore.Identity;
 
 namespace ScandinavianFood.Controllers
 {
     public class HomeController : Controller
     {
         private IRepository<ForumPost> PostData { get; set; }
-        private readonly SiteDbContext UserData;
+
         //initialize with repo
         public HomeController(IRepository<ForumPost> postRep)
         {
             PostData = postRep;
         }
-        //viewmodel to see users
         public IActionResult Index()
         {
-            if (UserData == null) return View();
-            List<IdentityUser> users = UserData.Users.ToList();
-            return View(users);
+            return View();
         }
-
         public IActionResult Overview()
         {
             return View();
@@ -38,22 +33,6 @@ namespace ScandinavianFood.Controllers
             return View(posts);
         }
         [HttpGet]
-        public IActionResult AddUser()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult AddUser(User user)
-        {
-            if (ModelState.IsValid)
-            {
-                UserData.Add(user);
-                UserData.SaveChanges();
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
-        }
-        [HttpGet]
         public IActionResult AddPost()
         {
             return View();
@@ -61,6 +40,16 @@ namespace ScandinavianFood.Controllers
         [HttpPost]
         public IActionResult AddPost(ForumPost post)
         {
+            //check if user is logged in
+            if (HttpContext.User.Identity.Name != null)
+            {
+                post.User = HttpContext.User.Identity.Name;
+            }
+            else
+            {
+                post.User = "Anonymous";
+            }
+            //if valid post
             if (ModelState.IsValid)
             {
                 if (post.Id == 0)

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{// use current controller or area to determine if tab is active
+    var current = ViewContext.RouteData.Values["area"]?.ToString() ?? 
+        ViewContext.RouteData.Values["controller"]?.ToString();
+        }
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,20 +23,55 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <li class="nav-item @Nav.Active("Home", current)">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @Nav.Active("References", current)">
                             <a class="nav-link text-dark" asp-area="" asp-controller="References" asp-action="References">References</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @Nav.Active("Recipes", current)">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Recipes" asp-action="Recipes">Recipes</a>
                         </li>
-                    </ul>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                        <!-- Login buttons and links -->
+                    @using Microsoft.AspNetCore.Identity
+                    @inject SignInManager<User> signInManager
+
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        // signed-in
+                        <li class="nav-item">
+                            <form method="post" asp-action="LogOut" asp-controller="Account"
+                                  asp-area="">
+                                <input type="submit" value="Log Out"
+                                       class="btn" />
+                                <span class="text-dark">@User.Identity.Name</span>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        var action = ViewContext.RouteData.Values["action"]?.ToString();
+
+                        // new/anon user
+                        <li class="nav-item @Nav.Active("Register", action)">
+                            <a asp-action="Register" asp-controller="Account"
+                               asp-area="" class="nav-link">
+                                <span class="fas fa-edit"></span>&nbsp;Register							   
+							</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Login" asp-controller="Account"
+                               asp-area="" class="btn">Log In</a>
+                        </li>
+                    }
+                </ul>
                 </div>
             </div>
         </nav>
     </header>
+ 
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
