@@ -19,14 +19,12 @@ namespace UnitTests
             var post1 = new ForumPost()
             {
                 Text = "hello",
-                //User = "Alan",
                 Rating = 4,
                 Id = 1
             };
             var post2 = new ForumPost()
             {
                 Text = "world",
-                //User = 1,
                 Rating = 5,
                 Id = 2
             };

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
 using ScandinavianFood.Models.Repositories;
@@ -32,6 +33,8 @@ namespace ScandinavianFood.Controllers
             List<ForumPost> posts = PostData.GetAll().ToList();
             return View(posts);
         }
+        //require login to add forum post or quiz
+        //[Authorize]
         [HttpGet]
         public IActionResult AddPost()
         {
@@ -70,16 +73,16 @@ namespace ScandinavianFood.Controllers
         [HttpGet]
         public IActionResult Quiz()
         {
-            ViewBag.Score = 0;
-            return View();
+            QuizState state = new QuizState();
+            return View(state);
         }
         [HttpPost]
         public IActionResult Quiz(QuizState state)
         {
             //get score from function in model
-            ViewBag.Score = state.NumCorrect();
+            state.Score = state.NumCorrect();
 
-            return View();
+            return View(state);
         }
     }
 }

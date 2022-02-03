@@ -10,8 +10,8 @@ using ScandinavianFood.Models;
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220126231712_Identity")]
-    partial class Identity
+    [Migration("20220203185519_Data")]
+    partial class Data
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

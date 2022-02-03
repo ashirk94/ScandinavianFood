@@ -1,23 +1,30 @@
-﻿namespace ScandinavianFood.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ScandinavianFood.Models
 {
     public class QuizState
     {
-        public string Answer1 { get; set; }
+        public string Answer1 { get; } = "D";
 
-        public string Answer2 { get; set; }
+        public string Answer2 { get; } = "B";
 
-        public string Answer3 { get; set; }
+        public string Answer3 { get; } = "A";
 
-        public int Score { get; set; }
+        [Compare("Answer1", ErrorMessage = "Incorrect")]
+        public string Question1 { get; set; } = "";
+        [Compare("Answer2", ErrorMessage = "Incorrect")]
+        public string Question2 { get; set; } = "";
+        [Compare("Answer3", ErrorMessage = "Incorrect")]
+        public string Question3 { get; set; } = "";
 
-        public int NumWrong { get; set; }
+        public int Score { get; set; } = 0;
+
+        public int NumWrong { get; set; } = 0;
 
         public int NumCorrect()
         {
-            //start from 0 and check all answers
-            Score = 0;
-            NumWrong = 0;
-            if (Answer1 == "D")
+            //check all answers
+            if (Question1 == Answer1)
             {
                 Score++;
             }
@@ -25,7 +32,7 @@
             {
                 NumWrong++;
             }
-            if (Answer2 == "B")
+            if (Question2 == Answer2)
             {
                 Score++;
             }
@@ -33,7 +40,7 @@
             {
                 NumWrong++;
             }
-            if (Answer3 == "A")
+            if (Question3 == Answer3)
             {
                 Score++;
             }

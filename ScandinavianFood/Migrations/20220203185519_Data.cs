@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScandinavianFood.Migrations
 {
-    public partial class Identity : Migration
+    public partial class Data : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
