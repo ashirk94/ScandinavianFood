@@ -2,29 +2,37 @@
 
 @{
     ViewData["Title"] = "Quiz";
+    var username = "Anonymous";
+    if (User.Identity.Name != null)
+    {
+        username = User.Identity.Name;
+    }
 }
 <h1>What is the most popular fish to eat in Scandinavia?</h1>
 
 <form asp-action="Quiz" method="post">
-    <input type="radio" asp-for="Answer1" value="A" /> A: Cod <br />
-    <input type="radio" asp-for="Answer1" value="B" /> B: Tilapia <br />
-    <input type="radio" asp-for="Answer1" value="C" /> C: Salmon <br />
-    <input type="radio" asp-for="Answer1" value="D" /> D: Herring <br />
+    <input type="radio" asp-for="Question1" value="A" /> A: Cod <br />
+    <input type="radio" asp-for="Question1" value="B" /> B: Tilapia <br />
+    <input type="radio" asp-for="Question1" value="C" /> C: Salmon <br />
+    <input type="radio" asp-for="Question1" value="D" /> D: Herring <br />
+    <span asp-validation-for="Question1" class="text-danger"></span>  
 
     <br />
     <h1>Are meatballs served larger in Sweden or Norway?</h1>
 
 
-    <input type="radio" asp-for="Answer2" value="A" /> A: Sweden <br />
-    <input type="radio" asp-for="Answer2" value="B" /> B: Norway <br />
-
+    <input type="radio" asp-for="Question2" value="A" /> A: Sweden <br />
+    <input type="radio" asp-for="Question2" value="B" /> B: Norway <br />
+    <span asp-validation-for="Question2" class="text-danger"></span>  
     <br />
     <h1>Lutfisk is: ___</h1>
 
 
-    <input type="radio" asp-for="Answer3" value="A" /> A: Cod preserved in lye <br />
-    <input type="radio" asp-for="Answer3" value="B" /> B: Fermented shark <br />
-    <input type="radio" asp-for="Answer3" value="C" /> C: Fermented herring <br />
+    <input type="radio" asp-for="Question3" value="A" /> A: Cod preserved in lye <br />
+    <input type="radio" asp-for="Question3" value="B" /> B: Fermented shark <br />
+    <input type="radio" asp-for="Question3" value="C" /> C: Fermented herring <br />
+    <span asp-validation-for="Question3" class="text-danger"></span>  
     <button type="submit" class="btn btn-lg btn-primary m-3 col-4">Submit</button>
 </form>
-<h2>Score: @ViewBag.Score </h2>
+<h2>User: @username </h2>
+<h2>Score: @Model.Score </h2>

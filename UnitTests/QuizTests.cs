@@ -11,18 +11,18 @@ namespace UnitTests
             var quiz = new QuizState()
             {
                 //wrong answers
-                Answer1 = "A",
-                Answer2 = "C",
-                Answer3 = "B"
+                Question1 = "A",
+                Question2 = "C",
+                Question3 = "B"
             };
 
             quiz.NumCorrect();
             Assert.True(quiz.Score == 0);
 
             //right answers
-            quiz.Answer1 = "D";
-            quiz.Answer2 = "B";
-            quiz.Answer3 = "A";
+            quiz.Question1 = "D";
+            quiz.Question2 = "B";
+            quiz.Question3 = "A";
             quiz.NumCorrect();
 
             Assert.True(quiz.Score == 3);
