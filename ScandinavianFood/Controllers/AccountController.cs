@@ -7,10 +7,10 @@ namespace ScandinavianFood.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<User> userManager;
-        private readonly SignInManager<User> signInManager;
+        private readonly UserManager<AppUser> userManager;
+        private readonly SignInManager<AppUser> signInManager;
 
-        public AccountController(UserManager<User> userMngr, SignInManager<User> signInMngr)
+        public AccountController(UserManager<AppUser> userMngr, SignInManager<AppUser> signInMngr)
         {
             userManager = userMngr;
             signInManager = signInMngr;
@@ -25,7 +25,7 @@ namespace ScandinavianFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Username };
+                var user = new AppUser { UserName = model.Username };
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

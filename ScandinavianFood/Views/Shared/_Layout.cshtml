@@ -1,7 +1,8 @@
-﻿@{// use current controller or area to determine if tab is active
-    var current = ViewContext.RouteData.Values["area"]?.ToString() ?? 
+﻿@{
+    // use current controller or area to determine if tab is active
+    var current = ViewContext.RouteData.Values["area"]?.ToString() ??
         ViewContext.RouteData.Values["controller"]?.ToString();
-        }
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,46 +33,52 @@
                         <li class="nav-item @Nav.Active("Recipes", current)">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Recipes" asp-action="Recipes">Recipes</a>
                         </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto">
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
                         <!-- Login buttons and links -->
-                    @using Microsoft.AspNetCore.Identity
-                    @inject SignInManager<User> signInManager
+                        @using Microsoft.AspNetCore.Identity
+                        @inject SignInManager<AppUser> signInManager
 
-                    @if (signInManager.IsSignedIn(User))
-                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin">Manage</a>
+                            </li>
+                        }
+                        @if (signInManager.IsSignedIn(User))
+                        {
                         // signed-in
-                        <li class="nav-item">
-                            <form method="post" asp-action="LogOut" asp-controller="Account"
+                            <li class="nav-item">
+                                <form method="post" asp-action="LogOut" asp-controller="Account"
                                   asp-area="">
-                                <input type="submit" value="Log Out"
+                                    <input type="submit" value="Log Out"
                                        class="btn" />
-                                <span class="text-dark">@User.Identity.Name</span>
-                            </form>
-                        </li>
-                    }
-                    else
-                    {
-                        var action = ViewContext.RouteData.Values["action"]?.ToString();
+                                    <span class="text-dark">@User.Identity.Name</span>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            var action = ViewContext.RouteData.Values["action"]?.ToString();
 
-                        // new/anon user
-                        <li class="nav-item @Nav.Active("Register", action)">
-                            <a asp-action="Register" asp-controller="Account"
-                               asp-area="" class="nav-link">
-                                <span class="fas fa-edit"></span>&nbsp;Register							   
-							</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-action="Login" asp-controller="Account"
-                               asp-area="" class="btn">Log In</a>
-                        </li>
-                    }
-                </ul>
+                            // new/anon user
+                            <li class="nav-item @Nav.Active("Register", action)">
+                                <a asp-action="Register" asp-controller="Account"
+                               asp-area="" class="nav-link text-dark">
+                                    Register
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Login" asp-controller="Account"
+                               asp-area="" class="nav-link text-dark">Log In</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
- 
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScandinavianFood.Models;
 
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220209023016_admin")]
+    partial class admin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,44 +215,6 @@ namespace ScandinavianFood.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "A",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "f128533b-eae8-4540-9d96-49a2a01e344c",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "7ad34bd6-ff52-4145-91c5-52adbb6d852e",
-                            TwoFactorEnabled = false,
-                            UserName = "AlanS"
-                        },
-                        new
-                        {
-                            Id = "B",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ddfddcde-44ca-405d-8707-fa62d6ef95d0",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a8517e7b-01a4-46e3-b9b7-b3fbfbef8995",
-                            TwoFactorEnabled = false,
-                            UserName = "SolaireA"
-                        },
-                        new
-                        {
-                            Id = "C",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1798f7f0-103c-4298-a031-c60864e28b9e",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "45c49d39-e269-452b-9bcb-9533fa0f9143",
-                            TwoFactorEnabled = false,
-                            UserName = "LautrecC"
-                        });
                 });
 
             modelBuilder.Entity("ScandinavianFood.Models.ForumPost", b =>
@@ -280,26 +244,6 @@ namespace ScandinavianFood.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ForumPosts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Page = "Forum",
-                            PostDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Rating = 5,
-                            Text = "Hello World",
-                            User = "AlanS"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Page = "Forum",
-                            PostDate = new DateTime(2021, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Rating = 4,
-                            Text = "Seed Data",
-                            User = "SolaireA"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
