@@ -33,8 +33,8 @@ namespace ScandinavianFood.Controllers
             List<ForumPost> posts = PostData.GetAll().ToList();
             return View(posts);
         }
-        //require login to add forum post or quiz
-        //[Authorize]
+        //require login
+        [Authorize]
         [HttpGet]
         public IActionResult AddPost()
         {
@@ -70,6 +70,8 @@ namespace ScandinavianFood.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         //quiz actions
+        //require login
+        [Authorize]
         [HttpGet]
         public IActionResult Quiz()
         {

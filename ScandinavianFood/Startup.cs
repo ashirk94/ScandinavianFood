@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.DataLayer;
 using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood
@@ -35,9 +36,20 @@ namespace ScandinavianFood
             services.AddHttpContextAccessor();
 
             //identity
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<SiteDbContext>()
                 .AddDefaultTokenProviders();
+
+            //password options
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = true;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +81,9 @@ namespace ScandinavianFood
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //seed admin
+            SeedData.SeedAdminUser(app.ApplicationServices).Wait();
         }
     }
 }

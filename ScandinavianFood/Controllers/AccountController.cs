@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.ViewModels;
 using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<User> userManager;
-        private readonly SignInManager<User> signInManager;
+        private readonly UserManager<AppUser> userManager;
+        private readonly SignInManager<AppUser> signInManager;
 
-        public AccountController(UserManager<User> userMngr, SignInManager<User> signInMngr)
+        public AccountController(UserManager<AppUser> userMngr, SignInManager<AppUser> signInMngr)
         {
             userManager = userMngr;
             signInManager = signInMngr;
         }
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -25,7 +27,7 @@ namespace ScandinavianFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Username };
+                var user = new AppUser { UserName = model.Username };
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -82,7 +84,7 @@ namespace ScandinavianFood.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ViewResult AccessDenied()
+        public IActionResult AccessDenied()
         {
             return View();
         }
