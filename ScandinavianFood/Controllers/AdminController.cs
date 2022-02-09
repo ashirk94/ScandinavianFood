@@ -12,8 +12,8 @@ namespace ScandinavianFood.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private UserManager<AppUser> userManager;
-        private RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<AppUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
         public AdminController(UserManager<AppUser> userMngr, RoleManager<IdentityRole> roleMngr)
         {

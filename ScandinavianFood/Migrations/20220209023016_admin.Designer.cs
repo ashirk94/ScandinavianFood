@@ -11,7 +11,7 @@ namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
     [Migration("20220209023016_admin")]
-    partial class admin
+    partial class Admin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

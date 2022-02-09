@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.ViewModels;
 using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers
@@ -15,6 +16,7 @@ namespace ScandinavianFood.Controllers
             userManager = userMngr;
             signInManager = signInMngr;
         }
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -82,7 +84,7 @@ namespace ScandinavianFood.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ViewResult AccessDenied()
+        public IActionResult AccessDenied()
         {
             return View();
         }

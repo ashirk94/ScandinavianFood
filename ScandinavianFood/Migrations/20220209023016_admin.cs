@@ -2,7 +2,7 @@
 
 namespace ScandinavianFood.Migrations
 {
-    public partial class admin : Migration
+    public partial class Admin : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

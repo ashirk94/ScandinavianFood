@@ -31,7 +31,7 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin">Manage</a>
+                                <a class="nav-link text-dark" asp-area="" asp-action="Index" asp-controller="Admin">Manage</a>
                             </li>
                         }
                         @if (signInManager.IsSignedIn(User))
