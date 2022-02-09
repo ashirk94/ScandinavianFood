@@ -3,3 +3,6 @@
 *.testlog
 *.manifest
 *.cache
+*.v2
+.vs/ScandinavianFood/v17/.suo
+*.v1
