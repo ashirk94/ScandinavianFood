@@ -30,7 +30,7 @@ namespace ScandinavianFood
                 Configuration.GetConnectionString("SiteDbContext")));
 
             //repositories
-            services.AddTransient<IRepository<ForumPost>, PostRepo>();
+            services.AddTransient<IPostRepository, PostRepository>();
 
             //httpcontext
             services.AddHttpContextAccessor();
