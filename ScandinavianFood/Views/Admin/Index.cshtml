@@ -5,8 +5,9 @@
     ViewData["Title"] = " | Manage Users"; 
 }
 
-<h1 class="mb-2">Manage Users</h1>
-<h5 class="mt-2"><a asp-action="Add">Add a User</a></h5>
+<div class="container text-center">
+    <h1 class="mb-2">Manage Users</h1>
+<h5 class="mt-2"><a class="btn btn-outline-primary" asp-action="Add">Add a User</a></h5>
 
 <table class="table table-bordered table-striped table-sm">
     <thead>
@@ -29,17 +30,17 @@
     </td>
     <td>
         <form method="post" asp-action="Delete" asp-route-id="@user.Id">
-            <button type="submit" class="btn btn-primary"> Delete User</button>
+            <button type="submit" class="btn btn-outline-primary"> Delete User</button>
         </form>
     </td>
     <td>
         <form method="post" asp-action="AddToAdmin" asp-route-id="@user.Id">
-            <button type="submit" class="btn btn-primary"> Add To Admin</button>
+            <button type="submit" class="btn btn-outline-primary"> Add To Admin</button>
         </form>
     </td>
     <td>
         <form method="post" asp-action="RemoveFromAdmin" asp-route-id="@user.Id">
-            <button type="submit" class="btn btn-primary"> Remove From Admin</button>
+            <button type="submit" class="btn btn-outline-primary"> Remove From Admin</button>
         </form>
     </td>
 </tr>}}
@@ -51,7 +52,7 @@
 @if (Model.Roles.Count() == 0)
 {
     <form method="post" asp-action="CreateAdminRole">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-outline-primary">
             Create Admin Role
         </button>
     </form>
@@ -70,7 +71,7 @@ else
                     <td>
                         <form method="post" asp-action="DeleteRole"
                               asp-route-id="@role.Id">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-outline-primary">
                                 Delete Role
                             </button>
                         </form>
@@ -82,3 +83,5 @@ else
 }
 
 <div class="text-danger">@TempData["message"]</div>
+</div>
+

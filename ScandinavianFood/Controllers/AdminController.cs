@@ -120,5 +120,9 @@ namespace ScandinavianFood.Controllers
             await roleManager.CreateAsync(new IdentityRole("Admin"));
             return RedirectToAction("Index");
         }
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }
