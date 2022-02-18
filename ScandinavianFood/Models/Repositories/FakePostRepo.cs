@@ -1,43 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ScandinavianFood.Models.Repositories
 {
-    public class FakePostRepo : IRepository<ForumPost>
+    public class FakePostRepo : IPostRepository
     {
         private readonly List<ForumPost> posts = new List<ForumPost>();
 
-        public IEnumerable<ForumPost> GetAll()
+        public async Task<List<ForumPost>> GetAll()
         {
-            return posts;
+            return await Task.Run(() => posts);
         }
 
-        public ForumPost GetById(int id)
+        public async Task<ForumPost> GetById(int id)
         {
-            ForumPost post = posts.Find(p => p.Id == id);
-            return post;
+            return await Task.Run(() => posts[id]);
         }
 
-        public void Insert(ForumPost post)
+        public async Task Insert(ForumPost post)
         {
-            post.Id = posts.Count;
-            posts.Add(post);
+            await Task.Run(() => posts.Add(post));
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            ForumPost post = posts.Find(p => p.Id == id);
+            ForumPost post = await Task.Run(() => posts[id]);
             posts.Remove(post);
         }
 
-        public void Update(ForumPost post)
+        public async Task Update(ForumPost post)
         {
-            int id = post.Id;
-            post = posts.Find(p => p.Id == id);
+            ForumPost myPost = await Task.Run(() => posts[post.Id]);
+            await Task.Run(() => myPost = post);
         }
 
-        public void Save()
+        public async Task Save()
         {
-            return;
+            await Task.Run(() => Console.WriteLine("Saved"));
         }
     }
 }

@@ -488,3 +488,5 @@ C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\Unit
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Moq.dll

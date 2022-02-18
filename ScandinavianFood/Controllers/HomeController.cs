@@ -6,15 +6,16 @@ using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers
 {
     public class HomeController : Controller
     {
-        private IRepository<ForumPost> PostData { get; set; }
+        private IPostRepository PostData { get; set; }
 
         //initialize with repo
-        public HomeController(IRepository<ForumPost> postRep)
+        public HomeController(IPostRepository postRep)
         {
             PostData = postRep;
         }
@@ -28,9 +29,9 @@ namespace ScandinavianFood.Controllers
         }
         //forum
         [HttpGet]
-        public IActionResult Forum()
+        public async Task<IActionResult> Forum()
         {
-            List<ForumPost> posts = PostData.GetAll().ToList();
+            List<ForumPost> posts =  await PostData.GetAll();
             return View(posts);
         }
         //require login
@@ -40,8 +41,9 @@ namespace ScandinavianFood.Controllers
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
-        public IActionResult AddPost(ForumPost post)
+        public async Task<IActionResult> AddPost(ForumPost post)
         {
             //check if user is logged in
             if (HttpContext.User.Identity.Name != null)
@@ -56,10 +58,10 @@ namespace ScandinavianFood.Controllers
             if (ModelState.IsValid)
             {
                 if (post.Id == 0)
-                    PostData.Insert(post);
+                    await PostData.Insert(post);
                 else
-                    PostData.Update(post);
-                PostData.Save();
+                    await PostData.Update(post);
+                await PostData.Save();
                 return RedirectToAction("Forum", "Home");
             }
             return View();
@@ -78,6 +80,7 @@ namespace ScandinavianFood.Controllers
             QuizState state = new QuizState();
             return View(state);
         }
+        [Authorize]
         [HttpPost]
         public IActionResult Quiz(QuizState state)
         {
