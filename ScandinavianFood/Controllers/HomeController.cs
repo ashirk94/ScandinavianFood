@@ -82,7 +82,7 @@ namespace ScandinavianFood.Controllers
         }
         [Authorize]
         [HttpPost]
-        public IActionResult Quiz(QuizState state)
+        public IActionResult Quiz(QuizState state) // TODO: show success for 3 correct
         {
             //get score from function in model
             state.Score = state.NumCorrect();

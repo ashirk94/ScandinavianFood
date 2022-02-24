@@ -8,9 +8,9 @@ namespace ScandinavianFood.Models.DataLayer
 {
     public static class SeedData
     {
-        private const string id1 = "A";
-        private const string id2 = "B";
-        private const string id3 = "C";
+        private const string ID1 = "A";
+        private const string ID2 = "B";
+        private const string ID3 = "C";
 
         public static async Task SeedAdminUser(IServiceProvider serviceProvider)
         {
@@ -46,17 +46,17 @@ namespace ScandinavianFood.Models.DataLayer
             // seed users
             var user1 = new AppUser()
             {
-                Id = id1,
+                Id = ID1,
                 UserName = "AlanS"
             };
             var user2 = new AppUser()
             {
-                Id = id2,
+                Id = ID2,
                 UserName = "SolaireA"
             };
             var user3 = new AppUser()
             {
-                Id = id3,
+                Id = ID3,
                 UserName = "LautrecC"
             };
 
@@ -71,18 +71,14 @@ namespace ScandinavianFood.Models.DataLayer
                     Id = 1,
                     User = user1.UserName,
                     Text = "Hello World",
-                    Page = "Forum",
-                    PostDate = DateTime.Parse("1/1/2022"),
-                    Rating = 5
+                    PostDate = DateTime.Parse("1/1/2022")
                 },
                 new
                 {
                     Id = 2,
                     User = user2.UserName,
                     Text = "Seed Data",
-                    Page = "Forum",
-                    PostDate = DateTime.Parse("6/4/2021"),
-                    Rating = 4
+                    PostDate = DateTime.Parse("6/4/2021")
                 }
             );
         }

@@ -11,17 +11,13 @@
                 <th>User</th>
                 <th>Comment</th>
                 <th>Date/Time</th>
-                <th>Rating</th>
-                <th>Page</th>
             </tr>
             @foreach (var post in Model)
             {
                 <tr>
                     <td>@post.User</td>
                     <td>@post.Text</td>
-                    <td>@post.PostDate</td>
-                    <td>@post.Rating</td>
-                    <td>@post.Page</td>
+                    <td>@post.PostDate.ToString("g")</td>
                 </tr>
             }
         </table>

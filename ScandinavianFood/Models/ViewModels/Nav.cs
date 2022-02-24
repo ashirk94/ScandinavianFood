@@ -1,10 +1,18 @@
-﻿namespace ScandinavianFood.Models
+﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
+namespace ScandinavianFood.Models
 {
     public static class Nav
     {
-        public static string Active(string value, string current) =>
-            (value == current) ? "active" : "";
-        public static string Active(int value, int current) =>
-            (value == current) ? "active" : "";
+        public static string Active(this HtmlHelper html, string control)
+        {
+            var routeData = html.ViewContext.RouteData;
+
+            var routeControl = (string)routeData.Values["controller"];
+
+            var returnActive = control == routeControl;
+
+            return returnActive ? "active" : "";
+        }
     }
 }

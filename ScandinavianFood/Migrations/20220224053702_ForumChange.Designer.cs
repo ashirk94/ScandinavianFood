@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScandinavianFood.Models;
 
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220224053702_ForumChange")]
+    partial class ForumChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

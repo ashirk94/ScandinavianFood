@@ -10,9 +10,6 @@ namespace ScandinavianFood.Models
         public string Text { get; set; }
         public int Id { get; set; }
         public DateTime PostDate { get; set; } = DateTime.Now;
-        public string Page { get; set; } = "Forum";
-        [Range(1, 5)]
-        public int Rating { get; set; }
         public string User { get; set; } = "Anonymous";
     }
 }

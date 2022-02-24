@@ -21,13 +21,11 @@ namespace UnitTests
             var post1 = new ForumPost()
             {
                 Text = "hello",
-                Rating = 4,
                 Id = 1
             };
             var post2 = new ForumPost()
             {
                 Text = "world",
-                Rating = 5,
                 Id = 2
             };
             //add to repo
