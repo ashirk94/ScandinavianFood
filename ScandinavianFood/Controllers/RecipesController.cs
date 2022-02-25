@@ -6,6 +6,7 @@ namespace ScandinavianFood.Controllers
     {
         public IActionResult Recipes()
         {
+            ViewBag.Current = "Recipes";
             return View();
         }
     }

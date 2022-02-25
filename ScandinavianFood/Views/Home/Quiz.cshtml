@@ -2,11 +2,13 @@
 
 @{
     ViewData["Title"] = "Quiz";
+    ViewData["Active"] = "Home";
     var username = "Anonymous";
     if (User.Identity.Name != null)
     {
         username = User.Identity.Name;
     }
+
 }
 <div class="container text-center">
     <h4>What is the most popular fish to eat in Scandinavia?</h4>
@@ -33,10 +35,20 @@
     <input type="radio" asp-for="Question3" value="B" /> B: Fermented shark <br />
     <input type="radio" asp-for="Question3" value="C" /> C: Fermented herring <br />
     <span asp-validation-for="Question3" class="text-danger"></span>  
+    <br />
     <button type="submit" class="btn btn-lg btn-outline-primary m-3 col-2">Submit</button>
 </form>
 <br /><br /><br /><br />
 <h3>User: @username </h3>
-<h2>Score: @Model.Score </h2>
+
+@if (Model.Score < 3)
+{
+    <h2 class="text-danger">Score: @Model.Score / 3</h2>
+}
+@if (Model.Score == 3)
+{
+    <h2 class="text-success">Score: @Model.Score / 3</h2>
+    <p class="text-success">Good Job!</p>
+}
 </div>
 

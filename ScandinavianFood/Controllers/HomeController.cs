@@ -21,6 +21,7 @@ namespace ScandinavianFood.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.Current = "Home";
             return View();
         }
         public IActionResult Overview()

@@ -19,6 +19,7 @@ namespace ScandinavianFood.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            ViewBag.Current = "Register";
             return View();
         }
 
@@ -48,6 +49,7 @@ namespace ScandinavianFood.Controllers
         [HttpGet]
         public IActionResult LogIn(string returnURL = "")
         {
+            ViewBag.Current = "Login";
             var model = new LoginVM
             {
                 ReturnUrl = returnURL

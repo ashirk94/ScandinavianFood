@@ -4,15 +4,18 @@ namespace ScandinavianFood.Models
 {
     public static class Nav
     {
-        public static string Active(this HtmlHelper html, string control)
+        public static string IsActive(this HtmlHelper html, string control)
         {
             var routeData = html.ViewContext.RouteData;
 
-            var routeControl = (string)routeData.Values["controller"];
+            string routeControl = (string)routeData.Values["controller"];
 
-            var returnActive = control == routeControl;
+            if(control == routeControl)
+            {
+                return "active";
+            }
 
-            return returnActive ? "active" : "";
+            return "";
         }
     }
 }
