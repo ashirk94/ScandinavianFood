@@ -5,12 +5,7 @@ for details on configuring this project to bundle and minify static web assets. 
     cursor: default;
 }
 .homefish {
-    height: 50vh;
-    background-image: url('../lib/homepage.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 20px;
+    max-height: 50vh;
 }
 
 a.navbar-brand {

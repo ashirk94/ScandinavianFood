@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Scandinavian Food" />
+    <meta property="og:image" content="https://scandinavianfood.azurewebsites.net/images/lefse.jpeg" />
+    <meta property="og:description" content="A class project site for CS296N with a forum, quiz, and user registration.
+This is the first site I have made with ASP.NET Core and have been steadily adding features and styling as I learn." />
+    <meta name="author" content="Alan Shirk" />
+    <meta name="publish_date" property="og:publish_date" content="2022-02-26" />
     <title>@ViewData["Title"] - ScandinavianFood</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="shortcut icon" href="~/lib/favicon.png" />
+    <link rel="shortcut icon" href="~/images/favicon.png" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+            <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Scandinavian Food</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navwrapper" aria-controls="navwrapper"
                         aria-expanded="false" aria-label="Toggle navigation">
