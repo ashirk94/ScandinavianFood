@@ -25,7 +25,8 @@ namespace ScandinavianFood.Models.DataLayer
                 serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
             // if role doesn't exist, create it
-            if (await roleManager.FindByNameAsync(ROLE_NAME) == null)
+            var adminRole = await roleManager.FindByNameAsync(ROLE_NAME);
+            if (adminRole == null)
             {
                 await roleManager.CreateAsync(new IdentityRole(ROLE_NAME));
             }

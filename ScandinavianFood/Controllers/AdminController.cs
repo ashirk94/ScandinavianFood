@@ -23,6 +23,7 @@ namespace ScandinavianFood.Controllers
         //main admin page with users and roles
         public async Task<IActionResult> Index()
         {
+            ViewBag.Current = "Admin";
             List<AppUser> users = userManager.Users.ToList();
             foreach (AppUser user in users)
             {

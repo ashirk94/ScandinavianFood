@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Moq;
 using ScandinavianFood.Controllers;
 using ScandinavianFood.Models;
 using ScandinavianFood.Models.Repositories;

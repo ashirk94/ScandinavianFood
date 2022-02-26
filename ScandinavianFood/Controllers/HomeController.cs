@@ -5,7 +5,6 @@ using ScandinavianFood.Models;
 using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers
@@ -21,6 +20,7 @@ namespace ScandinavianFood.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.Current = "Home";
             return View();
         }
         public IActionResult Overview()
@@ -31,7 +31,7 @@ namespace ScandinavianFood.Controllers
         [HttpGet]
         public async Task<IActionResult> Forum()
         {
-            List<ForumPost> posts =  await PostData.GetAll();
+            List<ForumPost> posts = await PostData.GetAll();
             return View(posts);
         }
         //require login
