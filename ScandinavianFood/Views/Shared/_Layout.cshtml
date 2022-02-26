@@ -18,14 +18,12 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Scandinavian Food</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navwrapper" aria-controls="navwrapper"
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navwrapper" aria-controls="navwrapper"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse" id="navwrapper" style="">
-
-                    <ul class="nav navbar-nav ml-auto">
+                <div class="collapse navbar-collapse" id="navwrapper">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link @(ViewBag.Current == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -36,58 +34,61 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
                             <a class="nav-link @(ViewBag.Current == "Recipes" ? "active" : "")" asp-area="" asp-controller="Recipes" asp-action="Recipes">Recipes</a>
                         </li>
                     </ul>
-                </div>
-                <ul class="navbar-nav me-auto">
-                    <!-- Login buttons and links -->
-                    @using Microsoft.AspNetCore.Identity
-                    @inject SignInManager<AppUser> signInManager
 
-                    @if (User.IsInRole("Admin"))
-                    {
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Login buttons and links -->
+                        @using Microsoft.AspNetCore.Identity
+                        @inject SignInManager<AppUser> signInManager
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage</a>
+                            </li>
+                        }
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            // signed-in
+                            <li class="nav-item">
+                                <form method="post" asp-action="LogOut" asp-controller="Account"
+                                  asp-area="">
+                                    <button type="submit"
+                                        class="btn btn-link nav-link">
+                                        Log Out
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                        // new/anon user
+                            <li class="nav-item">
+                                <a asp-action="Register" asp-controller="Account"
+                               asp-area="" class="nav-link @(ViewBag.Current == "Register" ? "active" : "")">
+                                    Register
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Login" asp-controller="Account"
+                               asp-area="" class="nav-link @(ViewBag.Current == "Login" ? "active" : "")">Log In</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage</a>
+                            <div class="nav-link active" id="noclick">@User.Identity.Name</div>
                         </li>
-                    }
-                    @if (signInManager.IsSignedIn(User))
-                    {
-                        // signed-in
-                        <li class="nav-item">
-                            <form method="post" asp-action="LogOut" asp-controller="Account"
-                              asp-area="">
-                                <button type="submit"
-                                   class="btn btn-link nav-link">Log Out</button>
-                            </form>
-                        </li>
-                    }
-                    else
-                    {
-                    // new/anon user
-                        <li class="nav-item">
-                            <a asp-action="Register" asp-controller="Account"
-                           asp-area="" class="nav-link @(ViewBag.Current == "Register" ? "active" : "")">
-                                Register
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-action="Login" asp-controller="Account"
-                           asp-area="" class="nav-link @(ViewBag.Current == "Login" ? "active" : "")">Log In</a>
-                        </li>
-                    }
-                    <li class="nav-item">
-                        <div class="nav-link active" id="noclick">@User.Identity.Name</div>
-                    </li>
-                </ul>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
+    <div class="container-fluid mt-0">
+        <main role="main" class="pb-1">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-0">
         <div class="container">
             &copy; 2022 - Alan Shirk
         </div>

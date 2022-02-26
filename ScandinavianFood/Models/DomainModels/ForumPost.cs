@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ScandinavianFood.Models
+namespace ScandinavianFood.Models.DomainModels
 {
     public class ForumPost
     {

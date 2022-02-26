@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.DomainModels;
 using System.Threading.Tasks;
 
 namespace ScandinavianFood.Controllers

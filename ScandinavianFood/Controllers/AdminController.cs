@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.ViewModels;
 using System.Collections.Generic;
 using System.Linq;

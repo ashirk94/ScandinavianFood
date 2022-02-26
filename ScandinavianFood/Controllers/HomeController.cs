@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Models;
+using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Diagnostics;

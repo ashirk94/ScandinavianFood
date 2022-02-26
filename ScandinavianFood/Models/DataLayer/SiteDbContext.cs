@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ScandinavianFood.Models.DataLayer;
+using ScandinavianFood.Models.DomainModels;
 
 namespace ScandinavianFood.Models
 {

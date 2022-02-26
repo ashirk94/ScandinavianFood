@@ -5,7 +5,11 @@ for details on configuring this project to bundle and minify static web assets. 
     cursor: default;
 }
 .homefish {
-    max-height: 50vh;
+    height: 58vh;
+}
+img {
+    width: 100%;
+    max-height: 100%;
 }
 
 a.navbar-brand {

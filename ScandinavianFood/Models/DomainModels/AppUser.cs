@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ScandinavianFood.Models
+namespace ScandinavianFood.Models.DomainModels
 {
     public class AppUser : IdentityUser
     {
         [NotMapped]
-        public IList<string> RoleNames { get; set; }
+        public ICollection<string> RoleNames { get; set; }
     }
 }
