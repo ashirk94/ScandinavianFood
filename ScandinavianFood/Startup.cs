@@ -23,7 +23,7 @@ namespace ScandinavianFood
         //service injections
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews().AddRazorRuntimeCompilation(); 
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             //dbcontext
             services.AddDbContext<SiteDbContext>(options => options.UseSqlServer(

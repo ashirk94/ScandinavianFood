@@ -11,6 +11,5 @@ namespace ScandinavianFood.Models
         [StringLength(255)]
         public string Password { get; set; }
         public string ReturnUrl { get; set; }
-        public bool RememberMe { get; set; }
     }
 }
