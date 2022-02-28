@@ -1,8 +1,8 @@
-﻿@model QuizState
+﻿@model QuizVM
 
 @{
     ViewData["Title"] = "Quiz";
-    ViewData["Active"] = "Home";
+    ViewData["Active"] = "Quiz";
     var username = "Anonymous";
     if (User.Identity.Name != null)
     {
@@ -13,7 +13,7 @@
 <div class="container text-center">
     <h4>What is the most popular fish to eat in Scandinavia?</h4>
 
-<form asp-action="Quiz" method="post">
+<form asp-action="Index" method="post">
     <input type="radio" asp-for="Question1" value="A" /> A: Cod <br />
     <input type="radio" asp-for="Question1" value="B" /> B: Tilapia <br />
     <input type="radio" asp-for="Question1" value="C" /> C: Salmon <br />
@@ -51,4 +51,3 @@
     <p class="text-success">Good Job!</p>
 }
 </div>
-

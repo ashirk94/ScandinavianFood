@@ -32,6 +32,7 @@ namespace ScandinavianFood
 
             //repositories
             services.AddTransient<IPostRepository, PostRepository>();
+            //services.AddTransient<SeedData>();
 
             //httpcontext
             services.AddHttpContextAccessor();
@@ -54,7 +55,7 @@ namespace ScandinavianFood
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -84,7 +85,14 @@ namespace ScandinavianFood
             });
 
             //seed admin
-            SeedData.SeedAdminUser(app.ApplicationServices).Wait();
+            using var scope = app.ApplicationServices.CreateScope();
+            var services = scope.ServiceProvider;
+            var context = services.GetRequiredService<SiteDbContext>();
+            context.Database.Migrate();
+
+            //TODO: password with secret manager
+
+            await SeedData.SeedAdminUser(services);
         }
     }
 }

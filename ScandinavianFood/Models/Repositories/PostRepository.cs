@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScandinavianFood.Models.DomainModels;
+using System.Linq;
 
 namespace ScandinavianFood.Models.Repositories
 {
@@ -15,9 +16,17 @@ namespace ScandinavianFood.Models.Repositories
             this.context = context;
         }
 
-        public async Task<List<ForumPost>> GetAll()
+        public IQueryable<ForumPost> ForumPosts
         {
-            return await context.ForumPosts.ToListAsync();
+            get
+            {
+                //query to get all posts and include replies
+                return context.ForumPosts.Include(p => p.Poster)
+                    .Include(p => p.ForumReplies)
+                    .ThenInclude(p => p.Replier)
+                    .Include(p => p.ForumRatings)
+                    .ThenInclude(p => p.Rater);
+            }
         }
 
         public async Task<ForumPost> GetById(int id)

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScandinavianFood.Controllers;
-using ScandinavianFood.Models;
+using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -14,25 +14,25 @@ namespace UnitTests
         public async Task AddPostTestAsync()
         {
             var fakePostRepo = new FakePostRepo();
-            var controller = new HomeController(fakePostRepo);
+            var controller = new ForumController(null, fakePostRepo);
 
             //example posts
             var post1 = new ForumPost()
             {
                 Text = "hello",
-                Id = 1
+                ForumPostId = 1
             };
             var post2 = new ForumPost()
             {
                 Text = "world",
-                Id = 2
+                ForumPostId = 2
             };
             //add to repo
             await fakePostRepo.Insert(post1);
             await fakePostRepo.Insert(post2);
 
             //actions
-            var viewResult = (ViewResult)await controller.Forum();
+            var viewResult = (ViewResult)await controller.Index();
 
             //assert tests
             var posts = (List<ForumPost>)viewResult.ViewData.Model;

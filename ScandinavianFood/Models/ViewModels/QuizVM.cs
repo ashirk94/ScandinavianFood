@@ -2,7 +2,7 @@
 
 namespace ScandinavianFood.Models
 {
-    public class QuizState
+    public class QuizVM
     {
         public string Answer1 { get; } = "D";
 

@@ -10,8 +10,8 @@ using ScandinavianFood.Models;
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220209023016_admin")]
-    partial class Admin
+    [Migration("20220228034125_Ratings")]
+    partial class Ratings
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -152,7 +152,7 @@ namespace ScandinavianFood.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ScandinavianFood.Models.AppUser", b =>
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -215,35 +215,140 @@ namespace ScandinavianFood.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "A",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5db2dfdb-15a2-4dba-a06d-3606672c8b65",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "a583daa5-4fb2-4de9-98d6-a96213ab4bfe",
+                            TwoFactorEnabled = false,
+                            UserName = "AlanS"
+                        },
+                        new
+                        {
+                            Id = "B",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f8994e06-21d3-4f65-897b-c44f5da554c4",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "82213feb-56c4-40d9-8d4c-e12be6fac4c9",
+                            TwoFactorEnabled = false,
+                            UserName = "SolaireA"
+                        },
+                        new
+                        {
+                            Id = "C",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "998cfbbf-3096-44a6-b947-6c37c2944443",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "646d879a-17a0-4ba1-83fe-d8fdd0402235",
+                            TwoFactorEnabled = false,
+                            UserName = "LautrecC"
+                        });
                 });
 
-            modelBuilder.Entity("ScandinavianFood.Models.ForumPost", b =>
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumPost", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ForumPostId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Page")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("PostDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
+                    b.Property<string>("PosterId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("User")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("ForumPostId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("PosterId");
 
                     b.ToTable("ForumPosts");
+
+                    b.HasData(
+                        new
+                        {
+                            ForumPostId = 1,
+                            PostDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PosterId = "A",
+                            Text = "Hello World"
+                        },
+                        new
+                        {
+                            ForumPostId = 2,
+                            PostDate = new DateTime(2021, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PosterId = "B",
+                            Text = "Seed Data"
+                        });
+                });
+
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumRating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ForumPostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RaterId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("ForumPostId");
+
+                    b.HasIndex("RaterId");
+
+                    b.ToTable("ForumRating");
+                });
+
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumReply", b =>
+                {
+                    b.Property<int>("ReplyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ForumPostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReplierId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ReplyDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReplyText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ReplyId");
+
+                    b.HasIndex("ForumPostId");
+
+                    b.HasIndex("ReplierId");
+
+                    b.ToTable("ForumReply");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -257,7 +362,7 @@ namespace ScandinavianFood.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ScandinavianFood.Models.AppUser", null)
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -266,7 +371,7 @@ namespace ScandinavianFood.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ScandinavianFood.Models.AppUser", null)
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -281,7 +386,7 @@ namespace ScandinavianFood.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ScandinavianFood.Models.AppUser", null)
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -290,11 +395,44 @@ namespace ScandinavianFood.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ScandinavianFood.Models.AppUser", null)
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumPost", b =>
+                {
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", "Poster")
+                        .WithMany()
+                        .HasForeignKey("PosterId");
+                });
+
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumRating", b =>
+                {
+                    b.HasOne("ScandinavianFood.Models.DomainModels.ForumPost", null)
+                        .WithMany("ForumRatings")
+                        .HasForeignKey("ForumPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", "Rater")
+                        .WithMany()
+                        .HasForeignKey("RaterId");
+                });
+
+            modelBuilder.Entity("ScandinavianFood.Models.DomainModels.ForumReply", b =>
+                {
+                    b.HasOne("ScandinavianFood.Models.DomainModels.ForumPost", null)
+                        .WithMany("ForumReplies")
+                        .HasForeignKey("ForumPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ScandinavianFood.Models.DomainModels.AppUser", "Replier")
+                        .WithMany()
+                        .HasForeignKey("ReplierId");
                 });
 #pragma warning restore 612, 618
         }

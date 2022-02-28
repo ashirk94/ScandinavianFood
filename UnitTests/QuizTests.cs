@@ -8,7 +8,7 @@ namespace UnitTests
         [Fact]
         public void TestNumCorrect()
         {
-            var quiz = new QuizState()
+            var quiz = new QuizVM()
             {
                 //wrong answers
                 Question1 = "A",

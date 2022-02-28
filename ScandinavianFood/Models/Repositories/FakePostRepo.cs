@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScandinavianFood.Models.DomainModels;
+using System.Linq;
 
 namespace ScandinavianFood.Models.Repositories
 {
     public class FakePostRepo : IPostRepository
     {
-        private readonly List<ForumPost> posts = new List<ForumPost>();
+        List<ForumPost> posts = new List<ForumPost>();
 
-        public async Task<List<ForumPost>> GetAll()
+        public IQueryable<ForumPost> ForumPosts
         {
-            return await Task.Run(() => posts);
+            get { return posts.AsQueryable<ForumPost>(); }
         }
 
         public async Task<ForumPost> GetById(int id)
@@ -32,7 +33,7 @@ namespace ScandinavianFood.Models.Repositories
 
         public async Task Update(ForumPost post)
         {
-            ForumPost myPost = await Task.Run(() => posts[post.Id]);
+            ForumPost myPost = await Task.Run(() => posts[post.ForumPostId]);
             await Task.Run(() => myPost = post);
         }
 
