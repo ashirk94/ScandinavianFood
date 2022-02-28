@@ -6,8 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScandinavianFood.Models;
-using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.DataLayer;
+using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.Repositories;
 
 namespace ScandinavianFood

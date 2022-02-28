@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9FHwltwV9U5r66VrKzl08EMyyTA7h+KxeIFAf64kDFCVzxuXnXaLyYUgtvFVdWEAvzQeRJar0A8fslCp7o1dEg==",
+  "dgSpecHash": "5zmRFPrF59TZOMfd3Q8H9mkwlHB3plsNF0HUddif+T7sqMvYxBlnbDaKCG2lSkrcle+Ae3DJLQRdrR2TJJOpkQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,7 @@
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.22\\microsoft.entityframeworkcore.analyzers.3.1.22.nupkg.sha512",
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.22\\microsoft.entityframeworkcore.design.3.1.22.nupkg.sha512",
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.22\\microsoft.entityframeworkcore.relational.3.1.22.nupkg.sha512",
-    "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.10\\microsoft.entityframeworkcore.sqlserver.3.1.10.nupkg.sha512",
+    "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.21\\microsoft.entityframeworkcore.sqlserver.3.1.21.nupkg.sha512",
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.22\\microsoft.entityframeworkcore.tools.3.1.22.nupkg.sha512",
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.22\\microsoft.extensions.caching.abstractions.3.1.22.nupkg.sha512",
     "C:\\Users\\ashir\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.22\\microsoft.extensions.caching.memory.3.1.22.nupkg.sha512",

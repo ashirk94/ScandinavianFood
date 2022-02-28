@@ -13,6 +13,6 @@ namespace ScandinavianFood.Models.DomainModels
         [Required]
         public string ReplyText { get; set; }
         public AppUser Replier { get; set; }
-        public DateTime ReplyDate { get; set; } = DateTime.Now;
+        public DateTime ReplyDate { get; set; } = DateTime.UtcNow;
     }
 }

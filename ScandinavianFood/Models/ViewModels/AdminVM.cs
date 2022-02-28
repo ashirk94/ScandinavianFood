@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System.Collections.Generic;
 using ScandinavianFood.Models.DomainModels;
+using System.Collections.Generic;
 
 namespace ScandinavianFood.Models.ViewModels
 {

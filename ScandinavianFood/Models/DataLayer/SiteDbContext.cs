@@ -18,5 +18,9 @@ namespace ScandinavianFood.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.Seed();
         }
+
+        public DbSet<ScandinavianFood.Models.DomainModels.ForumReply> ForumReply { get; set; }
+
+        public DbSet<ScandinavianFood.Models.DomainModels.ForumRating> ForumRating { get; set; }
     }
 }

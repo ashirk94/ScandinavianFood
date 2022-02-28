@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ScandinavianFood.Models.DomainModels;
 using ScandinavianFood.Models.Repositories;
 using ScandinavianFood.Models.ViewModels;
@@ -36,10 +35,10 @@ namespace ScandinavianFood.Controllers
                              .ToList<ForumPost>()
             );
             // pass to vm
-            var forumVM = new ForumVM 
-            { 
+            var forumVM = new ForumVM
+            {
                 Posts = posts,
-                PostText = "Add a public comment..."
+                PostText = ""
             };
             return View(forumVM);
         }
@@ -49,7 +48,10 @@ namespace ScandinavianFood.Controllers
         public async Task<IActionResult> Index(ForumVM forumVM)
         {
             // use vm data
-            var post = new ForumPost { Text = forumVM.PostText };
+            var post = new ForumPost 
+            { 
+                Text = forumVM.PostText
+            };
 
             //current user for post
             post.Poster = await UserManager.GetUserAsync(User);
@@ -58,10 +60,15 @@ namespace ScandinavianFood.Controllers
             if (ModelState.IsValid)
             {
                 if (post.ForumPostId == 0)
+                {
                     await PostData.Insert(post);
+                }
                 else
+                {
                     await PostData.Update(post);
+                }
                 await PostData.Save();
+                ModelState.Clear();
             }
             return RedirectToAction("Index", "Forum");
         }
@@ -69,10 +76,10 @@ namespace ScandinavianFood.Controllers
         [Authorize]
         public async Task<IActionResult> AddReply(int id)
         {
-            var replyVM = new ReplyVM 
-            { 
-                ForumPostId = id, 
-                ReplyText = "Enter a reply..."
+            var replyVM = new ReplyVM
+            {
+                ForumPostId = id,
+                ReplyText = ""
             };
             var post = await PostData.GetById(replyVM.ForumPostId);
             ViewBag.Post = post.Text;
@@ -84,8 +91,8 @@ namespace ScandinavianFood.Controllers
         public async Task<IActionResult> AddReply(ReplyVM replyVM)
         {
             // reply with data from vm
-            var reply = new ForumReply 
-            { 
+            var reply = new ForumReply
+            {
                 ReplyText = replyVM.ReplyText,
                 ForumPostId = replyVM.ForumPostId
             };
@@ -99,6 +106,7 @@ namespace ScandinavianFood.Controllers
             {
                 post.ForumReplies.Add(reply);
                 await PostData.Update(post);
+                ModelState.Clear();
                 return RedirectToAction("Index", "Forum");
             }
 
@@ -138,6 +146,7 @@ namespace ScandinavianFood.Controllers
             {
                 post.ForumRatings.Add(rating);
                 await PostData.Update(post);
+                ModelState.Clear();
                 return RedirectToAction("Index", "Forum");
             }
 

@@ -43,7 +43,16 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="btn nav-link m-auto @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage</a>
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumPosts" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumPosts">Manage Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumReplies" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumReplies">Manage Replies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumRatings" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumRatings">Manage Ratings</a>
                             </li>
                         }
                         @if (signInManager.IsSignedIn(User))

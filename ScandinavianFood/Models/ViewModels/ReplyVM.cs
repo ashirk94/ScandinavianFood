@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ScandinavianFood.Models.DomainModels;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScandinavianFood.Models.ViewModels

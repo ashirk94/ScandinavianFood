@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using ScandinavianFood.Models.DomainModels;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ScandinavianFood.Models.Repositories
 {

@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Forum";
     ViewData["Active"] = "Forum";
+    TimeZoneInfo tzPacific = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
 }
 @*post form*@
 <div class="text-center m-auto">
@@ -10,7 +11,7 @@
     <br />
     <div asp-validation-summary="All" class="text-danger"></div>
     <form asp-controller="Forum" method="post">
-        <textarea class="col-6" asp-for="PostText"></textarea>
+        <textarea placeholder="Add a public comment..." class="col-6" asp-for="PostText"></textarea>
         <br /><br />
         <button type="submit" class="btn btn-primary mb-3 col-2">Comment</button>
     </form>
@@ -31,12 +32,12 @@
 
             <div>
                 <strong class="m-3">Date: </strong>
-                <p class="m-3">@post.PostDate.ToString("g")</p>
+                <p class="m-3">@TimeZoneInfo.ConvertTimeFromUtc(post.PostDate, tzPacific).ToString("g")</p>
             </div>
         </div>
-        <div class="m-3">
-            <a asp-action="AddReply" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-secondary col-2 mb-3">Reply</a>
-            <a asp-action="AddRating" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-success col-2 mb-3">Rate</a>
+        <div class="m-3 d-flex justify-content-center gap-3">
+            <a asp-action="AddReply" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-secondary col-1 mb-3">Reply</a>
+            <a asp-action="AddRating" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-success col-1 mb-3">Rate</a>
         </div>
         @if (post.ForumReplies != null && post.ForumReplies.Count != 0)
         {
@@ -48,12 +49,12 @@
                         <h4 class="m-3">@reply.ReplyText</h4>
                     </div>
                     <div>
-                        <strong class="m-3">By:</strong>
+                        <strong class="m-3">User:</strong>
                         <p class="m-3">@reply.Replier.UserName</p>
                     </div>
                     <div>
                         <strong class="m-3">Date:</strong>
-                        <p class="m-3">@reply.ReplyDate.ToString("g")</p>
+                        <p class="m-3">@TimeZoneInfo.ConvertTimeFromUtc(reply.ReplyDate, tzPacific).ToString("g")</p>
                     </div>
                 }
             </div>
@@ -69,7 +70,7 @@
                         <h3 class="m-3">@rating.Rating</h3>
                     </div>
                     <div>
-                        <strong class="m-3">By:</strong>
+                        <strong class="m-3">User:</strong>
                         <p class="m-3">@rating.Rater.UserName</p>
                     </div>
                 }

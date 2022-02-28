@@ -13,7 +13,7 @@ namespace ScandinavianFood.Models.DomainModels
         [Required]
         public string Text { get; set; }
         public int ForumPostId { get; set; }
-        public DateTime PostDate { get; set; } = DateTime.Now;
+        public DateTime PostDate { get; set; } = DateTime.UtcNow;
         public AppUser Poster { get; set; }
         public List<ForumReply> ForumReplies
         {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using ScandinavianFood.Models.DomainModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ScandinavianFood.Models.DomainModels;
 using System;
 using System.Threading.Tasks;
 

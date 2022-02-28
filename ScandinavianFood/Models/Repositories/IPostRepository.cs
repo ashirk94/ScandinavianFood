@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ScandinavianFood.Models.DomainModels;
 using System.Linq;
 using System.Threading.Tasks;
-using ScandinavianFood.Models.DomainModels;
 
 namespace ScandinavianFood.Models.Repositories
 {

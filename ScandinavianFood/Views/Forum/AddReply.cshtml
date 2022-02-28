@@ -10,7 +10,7 @@
     <div asp-validation-summary="All" class="text-danger"></div>
     <form method="post">
         <p>Reply:</p>
-        <textarea class="col-6" asp-for="ReplyText">Add a public reply...</textarea>
+        <textarea placeholder="Add a public reply..." class="col-6" asp-for="ReplyText"></textarea>
         <br /><br />
         <input type="hidden" value="@Model.ForumPostId" asp-for="ForumPostId"/>
         <button type="submit" class="btn btn-primary mb-3 col-1">Reply</button>

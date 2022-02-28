@@ -219,11 +219,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "A",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5db2dfdb-15a2-4dba-a06d-3606672c8b65",
+                            ConcurrencyStamp = "997c48a4-4ec2-4e27-98a1-b30f51a50be4",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a583daa5-4fb2-4de9-98d6-a96213ab4bfe",
+                            SecurityStamp = "2406ee6f-28ff-4cc8-a8d6-ee2ba799ad23",
                             TwoFactorEnabled = false,
                             UserName = "AlanS"
                         },
@@ -231,11 +231,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "B",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f8994e06-21d3-4f65-897b-c44f5da554c4",
+                            ConcurrencyStamp = "e36b454d-de03-44b2-afa3-0247b41054be",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "82213feb-56c4-40d9-8d4c-e12be6fac4c9",
+                            SecurityStamp = "be1fcaf2-c6a9-4473-b9fd-e3ba016b5f9b",
                             TwoFactorEnabled = false,
                             UserName = "SolaireA"
                         },
@@ -243,11 +243,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "C",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "998cfbbf-3096-44a6-b947-6c37c2944443",
+                            ConcurrencyStamp = "9b5c5d58-a2e6-42f1-8915-2a06aad4ab25",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "646d879a-17a0-4ba1-83fe-d8fdd0402235",
+                            SecurityStamp = "dd6f899a-cc2e-4f0c-ad96-1a818f932962",
                             TwoFactorEnabled = false,
                             UserName = "LautrecC"
                         });
