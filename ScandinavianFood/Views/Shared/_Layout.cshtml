@@ -18,20 +18,20 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
             <div class="container">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navwrapper" aria-controls="navwrapper"
+                <button class="navbar-toggler navbar-toggler-right m-auto" type="button" data-toggle="collapse" data-target="#navwrapper" aria-controls="navwrapper"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navwrapper">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link @(ViewBag.Current == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="btn nav-link m-auto @(ViewBag.Current == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewBag.Current == "References" ? "active" : "")" asp-area="" asp-controller="References" asp-action="References">References</a>
+                            <a class="btn nav-link m-auto @(ViewBag.Current == "Forum" ? "active" : "")" asp-area="" asp-controller="Forum" asp-action="Index">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewBag.Current == "Recipes" ? "active" : "")" asp-area="" asp-controller="Recipes" asp-action="Recipes">Recipes</a>
+                            <a class="btn nav-link m-auto @(ViewBag.Current == "Quiz" ? "active" : "")" asp-area="" asp-controller="Quiz" asp-action="Index">Quiz</a>
                         </li>
                     </ul>
 
@@ -43,7 +43,16 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage</a>
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "Admin" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="Admin">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumPosts" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumPosts">Manage Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumReplies" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumReplies">Manage Replies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn nav-link m-auto @(ViewBag.Current == "ForumRatings" ? "active" : "")" asp-area="" asp-action="Index" asp-controller="ForumRatings">Manage Ratings</a>
                             </li>
                         }
                         @if (signInManager.IsSignedIn(User))
@@ -53,7 +62,7 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
                                 <form method="post" asp-action="LogOut" asp-controller="Account"
                                   asp-area="">
                                     <button type="submit"
-                                        class="btn btn-link nav-link">
+                                        class="btn btn-link nav-link m-auto">
                                         Log Out
                                     </button>
                                 </form>
@@ -64,17 +73,17 @@ This is the first site I have made with ASP.NET Core and have been steadily addi
                         // new/anon user
                             <li class="nav-item">
                                 <a asp-action="Register" asp-controller="Account"
-                               asp-area="" class="nav-link @(ViewBag.Current == "Register" ? "active" : "")">
+                               asp-area="" class="btn nav-link m-auto @(ViewBag.Current == "Register" ? "active" : "")">
                                     Register
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a asp-action="Login" asp-controller="Account"
-                               asp-area="" class="nav-link @(ViewBag.Current == "Login" ? "active" : "")">Log In</a>
+                               asp-area="" class="btn nav-link m-auto @(ViewBag.Current == "Login" ? "active" : "")">Log In</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <div class="nav-link active" id="noclick">@User.Identity.Name</div>
+                            <div class="btn nav-link m-auto active" id="noclick">@User.Identity.Name</div>
                         </li>
                     </ul>
                 </div>

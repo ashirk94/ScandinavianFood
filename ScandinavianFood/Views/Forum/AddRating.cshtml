@@ -1,0 +1,18 @@
+﻿@model RatingVM
+
+@{
+    ViewData["Title"] = "Rate Post";
+}
+<div class="text-center m-auto">
+    <h3 class="mb-3">Rate this Post</h3>
+    <h2>@ViewBag.Post</h2>
+    <br />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form method="post">
+        <p>Rating (1-10):</p>
+        <input class="col-2" asp-for="Rating"/>
+        <br /><br />
+        <input type="hidden" value="@Model.ForumPostId" asp-for="ForumPostId"/>
+        <button type="submit" class="btn btn-primary mb-3 col-1">Rate</button>
+    </form>
+</div>
