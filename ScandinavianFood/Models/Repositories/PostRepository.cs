@@ -19,7 +19,7 @@ namespace ScandinavianFood.Models.Repositories
         {
             get
             {
-                //query to get all posts and include replies
+                //eager loading related data
                 return context.ForumPosts.Include(p => p.Poster)
                     .Include(p => p.ForumReplies)
                     .ThenInclude(p => p.Replier)
