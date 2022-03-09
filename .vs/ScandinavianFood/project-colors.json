@@ -20,7 +20,22 @@
       "ProjectGuid": "87da82df-6754-45d1-812c-6c0f260e0ee6",
       "DisplayName": "JMeter",
       "ColorIndex": 2
+    },
+    "91e7ba3e-b05d-45be-8364-a1a4eaa59f37": {
+      "ProjectGuid": "91e7ba3e-b05d-45be-8364-a1a4eaa59f37",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 3
+    },
+    "ff8424e9-c4b4-4f6d-bf7d-80db5d5a338f": {
+      "ProjectGuid": "ff8424e9-c4b4-4f6d-bf7d-80db5d5a338f",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 4
+    },
+    "b816d175-60a5-4409-b378-2573db8438aa": {
+      "ProjectGuid": "b816d175-60a5-4409-b378-2573db8438aa",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 6
 }

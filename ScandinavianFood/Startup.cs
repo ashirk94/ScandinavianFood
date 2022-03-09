@@ -26,13 +26,15 @@ namespace ScandinavianFood
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            //dbcontext
-            services.AddDbContext<SiteDbContext>(options => options.UseSqlServer(
-                Configuration.GetConnectionString("SiteDbContext")));
+            //sql server dbcontext
+            //services.AddDbContext<SiteDbContext>(options => options.UseSqlServer(
+            //    Configuration.GetConnectionString("SiteDbContext")));
+            //sql lite dbcontext
+            services.AddDbContext<SiteDbContext>(options => options.UseSqlite(
+                Configuration.GetConnectionString("SQLiteConnection")));
 
             //repositories
             services.AddTransient<IPostRepository, PostRepository>();
-            //services.AddTransient<SeedData>();
 
             //httpcontext
             services.AddHttpContextAccessor();
@@ -88,7 +90,7 @@ namespace ScandinavianFood
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<SiteDbContext>();
-            context.Database.Migrate();
+            context.Database.EnsureCreated();
 
             //TODO: password with secret manager
 

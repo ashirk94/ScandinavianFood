@@ -3,7 +3,15 @@
 @{
     ViewData["Title"] = "Forum";
     ViewData["Active"] = "Forum";
-    TimeZoneInfo tzPacific = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+    TimeZoneInfo tzPacific;
+    try
+    {
+        tzPacific = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+    }
+    catch
+    {
+        tzPacific = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
+    }
 }
 @*post form*@
 <div class="text-center m-auto">

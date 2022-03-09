@@ -73,11 +73,15 @@ namespace ScandinavianFood.Controllers
                 return NotFound();
             }
 
-            var forumPost = await _context.ForumPosts.FindAsync(id);
+            var forumPost = await _context.ForumPosts.Include(p => p.ForumReplies).Where(p => p.ForumPostId == id).FirstOrDefaultAsync<ForumPost>();
+
             if (forumPost == null)
             {
                 return NotFound();
             }
+            //replies to viewbag
+            ViewBag.replies = forumPost.ForumReplies.ToList();
+
             return View(forumPost);
         }
 
