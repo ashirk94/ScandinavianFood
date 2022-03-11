@@ -1,5 +1,4 @@
 ﻿using ScandinavianFood.Models.DomainModels;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

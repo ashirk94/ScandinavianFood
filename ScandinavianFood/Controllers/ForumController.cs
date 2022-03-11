@@ -48,8 +48,8 @@ namespace ScandinavianFood.Controllers
         public async Task<IActionResult> Index(ForumVM forumVM)
         {
             // use vm data
-            var post = new ForumPost 
-            { 
+            var post = new ForumPost
+            {
                 Text = forumVM.PostText
             };
 

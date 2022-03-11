@@ -9,21 +9,21 @@ namespace ScandinavianFood.Models.DataLayer
 {
     public static class SeedData
     {
-        // TODO: hide credentials later
+        // password hidden
         private const string USERNAME = "admin";
-        private const string PASSWORD = "sesame0";
         private const string ROLE_NAME = "Admin";
         private const string ID1 = "A";
         private const string ID2 = "B";
         private const string ID3 = "C";
 
-        public static async Task SeedAdminUser(IServiceProvider serviceProvider)
+        public static async Task SeedAdminUser(IServiceProvider serviceProvider, string password)
         {
             //managers from serviceprovider
             UserManager<AppUser> userManager =
                 serviceProvider.GetRequiredService<UserManager<AppUser>>();
             RoleManager<IdentityRole> roleManager =
                 serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
 
             // if role doesn't exist, create it
             var adminRole = await roleManager.FindByNameAsync(ROLE_NAME);
@@ -35,7 +35,7 @@ namespace ScandinavianFood.Models.DataLayer
             if (await userManager.FindByNameAsync(USERNAME) == null)
             {
                 var user = new AppUser { UserName = USERNAME };
-                var result = await userManager.CreateAsync(user, PASSWORD);
+                var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(user, ROLE_NAME);

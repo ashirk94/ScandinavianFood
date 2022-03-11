@@ -90,9 +90,9 @@ namespace ScandinavianFood
             var context = services.GetRequiredService<SiteDbContext>();
             context.Database.Migrate();
 
-            //TODO: password with secret manager
+            string password = Configuration["AdminPassword"];
 
-            await SeedData.SeedAdminUser(services);
+            await SeedData.SeedAdminUser(services, password);
         }
     }
 }
