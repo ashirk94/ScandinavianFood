@@ -90,6 +90,7 @@ namespace ScandinavianFood
             var context = services.GetRequiredService<SiteDbContext>();
             context.Database.Migrate();
 
+            //git rm --cached appsetttings.json
             string password = Configuration["AdminPassword"];
 
             await SeedData.SeedAdminUser(services, password);
