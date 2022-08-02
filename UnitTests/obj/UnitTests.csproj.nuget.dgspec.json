@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\UnitTests.csproj": {}
+    "C:\\GitRepos\\ScandinavianFood\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj": {
+    "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj",
+        "projectUniqueName": "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj",
         "projectName": "ScandinavianFood",
-        "projectPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj",
-        "packagesPath": "C:\\Users\\ashir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\obj\\",
+        "projectPath": "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj",
+        "packagesPath": "C:\\Users\\alan\\.nuget\\packages\\",
+        "outputPath": "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ashir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,21 +89,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\UnitTests.csproj": {
+    "C:\\GitRepos\\ScandinavianFood\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\GitRepos\\ScandinavianFood\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\UnitTests.csproj",
-        "packagesPath": "C:\\Users\\ashir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\UnitTests\\obj\\",
+        "projectPath": "C:\\GitRepos\\ScandinavianFood\\UnitTests\\UnitTests.csproj",
+        "packagesPath": "C:\\Users\\alan\\.nuget\\packages\\",
+        "outputPath": "C:\\GitRepos\\ScandinavianFood\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ashir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,8 +117,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj": {
-                "projectPath": "C:\\Users\\ashir\\Desktop\\Schoolwork\\CS 296N\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj"
+              "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj": {
+                "projectPath": "C:\\GitRepos\\ScandinavianFood\\ScandinavianFood\\ScandinavianFood.csproj"
               }
             }
           }
@@ -183,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
