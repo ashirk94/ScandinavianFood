@@ -490,7 +490,6 @@ C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\Unit
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\ashir\Desktop\Schoolwork\CS 296N\ScandinavianFood\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\Moq.dll
-C:\GitRepos\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\GitRepos\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\GitRepos\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\GitRepos\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
@@ -981,3 +980,4 @@ C:\GitRepos\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.csproj.
 C:\GitRepos\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.dll
 C:\GitRepos\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.pdb
 C:\GitRepos\ScandinavianFood\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.genruntimeconfig.cache
+C:\GitRepos\ScandinavianFood\UnitTests\bin\Debug\netcoreapp3.1\appsettings.json

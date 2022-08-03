@@ -10,8 +10,8 @@ using ScandinavianFood.Models;
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220802234010_CI")]
-    partial class CI
+    [Migration("20220803010619_Next")]
+    partial class Next
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -221,11 +221,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "A",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "92f5d85c-762c-4342-973a-d047c9cb4131",
+                            ConcurrencyStamp = "894cb3ab-69ae-4e9f-874b-de4e8c62e81a",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "df34214f-e257-4564-8dba-ba8ab3912061",
+                            SecurityStamp = "a0ff044b-1403-48cc-932c-88f58d7407eb",
                             TwoFactorEnabled = false,
                             UserName = "AlanS"
                         },
@@ -233,11 +233,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "B",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "53e27f76-bb67-41a4-a256-bdc6bfe5b254",
+                            ConcurrencyStamp = "fbbc971c-e137-4a0e-8de6-d3a22c6f4244",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9849a5ea-c212-47fb-b0fb-48ed58d75848",
+                            SecurityStamp = "829f4d30-6307-458c-ad48-8d4b90f16a56",
                             TwoFactorEnabled = false,
                             UserName = "SolaireA"
                         },
@@ -245,11 +245,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "C",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "25834ab5-b0a6-45da-8a47-cff10cb2200a",
+                            ConcurrencyStamp = "c16cdf22-08a9-4b7d-b819-8b3f4469349f",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9364e0e5-3968-474d-905a-bdec76b08c32",
+                            SecurityStamp = "eabd868d-e6e7-4c55-b0fd-3068b434277a",
                             TwoFactorEnabled = false,
                             UserName = "LautrecC"
                         });

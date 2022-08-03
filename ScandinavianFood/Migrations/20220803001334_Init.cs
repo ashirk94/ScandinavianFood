@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScandinavianFood.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -174,6 +174,33 @@ namespace ScandinavianFood.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ForumRating",
+                columns: table => new
+                {
+                    RatingId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ForumPostId = table.Column<int>(nullable: false),
+                    Rating = table.Column<int>(nullable: false),
+                    RaterId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ForumRating", x => x.RatingId);
+                    table.ForeignKey(
+                        name: "FK_ForumRating_ForumPosts_ForumPostId",
+                        column: x => x.ForumPostId,
+                        principalTable: "ForumPosts",
+                        principalColumn: "ForumPostId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ForumRating_AspNetUsers_RaterId",
+                        column: x => x.RaterId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ForumReply",
                 columns: table => new
                 {
@@ -204,17 +231,17 @@ namespace ScandinavianFood.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "A", 0, "a6862069-4f22-44b5-b017-80e500c888aa", null, false, false, null, null, null, null, null, false, "198e75bf-9c25-4488-ad7c-3d47cdd708b3", false, "AlanS" });
+                values: new object[] { "A", 0, "ce317b25-a0c2-4822-a8f6-8b69e5c719b1", null, false, false, null, null, null, null, null, false, "ef58d704-579e-48f8-baa4-c958eda32be8", false, "AlanS" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B", 0, "09518339-76cc-4532-9a37-9636a0d99b66", null, false, false, null, null, null, null, null, false, "b6bef506-6431-4f6b-a5c2-bafe7340a3cf", false, "SolaireA" });
+                values: new object[] { "B", 0, "55632dea-c7fc-46cf-be42-186000ad8d79", null, false, false, null, null, null, null, null, false, "ee7338f7-f38f-4a41-ae0d-b32dffd0edde", false, "SolaireA" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "C", 0, "a3990125-ca21-439b-8894-85be556ab6fc", null, false, false, null, null, null, null, null, false, "f696062e-c53e-427c-b2b6-ed043b64f40f", false, "LautrecC" });
+                values: new object[] { "C", 0, "02df8242-c3ef-41bc-aa93-b357f6149fde", null, false, false, null, null, null, null, null, false, "500f3008-71ff-4ef2-a738-58cfbcdeab6e", false, "LautrecC" });
 
             migrationBuilder.InsertData(
                 table: "ForumPosts",
@@ -271,6 +298,16 @@ namespace ScandinavianFood.Migrations
                 column: "PosterId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ForumRating_ForumPostId",
+                table: "ForumRating",
+                column: "ForumPostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ForumRating_RaterId",
+                table: "ForumRating",
+                column: "RaterId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ForumReply_ForumPostId",
                 table: "ForumReply",
                 column: "ForumPostId");
@@ -297,6 +334,9 @@ namespace ScandinavianFood.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ForumRating");
 
             migrationBuilder.DropTable(
                 name: "ForumReply");

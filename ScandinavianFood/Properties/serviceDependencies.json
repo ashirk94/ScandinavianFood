@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "secrets1": {
+      "ignored": "true",
       "type": "secrets",
       "connectionId": "VaultUri"
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:SiteDbContext",
+      "connectionId": "ConnectionStrings:AzureConnection",
       "dynamicId": null
     }
   }

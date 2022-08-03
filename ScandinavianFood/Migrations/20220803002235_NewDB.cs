@@ -2,7 +2,7 @@
 
 namespace ScandinavianFood.Migrations
 {
-    public partial class UtcTime : Migration
+    public partial class NewDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,21 +11,21 @@ namespace ScandinavianFood.Migrations
                 keyColumn: "Id",
                 keyValue: "A",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "b56870b8-e56d-4e63-9725-71abe4a338dd", "646db9cb-5a07-4f26-8a72-425b83d19eab" });
+                values: new object[] { "7f187f19-48c9-497f-a1b0-5fe3a06e3330", "3be2dd1e-5ef9-4fce-b52b-926d5cb0767d" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "B",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "371f0ec9-8342-4866-a6a7-ddf2f39f69c6", "4ce7fcb0-78b2-462f-92a0-b99c67dac065" });
+                values: new object[] { "4c987447-86e8-47cd-a444-4a480c6cc5e4", "082a17c7-4fb5-4da7-b2be-bd0b63beaa5c" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "C",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "4cf33c9e-d888-49ec-87ad-5ca04c5c7cad", "510c5bfa-13ef-44d4-896c-1246adea3b7b" });
+                values: new object[] { "944273e6-125d-4928-9f6b-e1124557c9f3", "18e12b60-955a-49fb-88d0-cf6e1f2224da" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -35,21 +35,21 @@ namespace ScandinavianFood.Migrations
                 keyColumn: "Id",
                 keyValue: "A",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "5db2dfdb-15a2-4dba-a06d-3606672c8b65", "a583daa5-4fb2-4de9-98d6-a96213ab4bfe" });
+                values: new object[] { "ce317b25-a0c2-4822-a8f6-8b69e5c719b1", "ef58d704-579e-48f8-baa4-c958eda32be8" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "B",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "f8994e06-21d3-4f65-897b-c44f5da554c4", "82213feb-56c4-40d9-8d4c-e12be6fac4c9" });
+                values: new object[] { "55632dea-c7fc-46cf-be42-186000ad8d79", "ee7338f7-f38f-4a41-ae0d-b32dffd0edde" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "C",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "998cfbbf-3096-44a6-b947-6c37c2944443", "646d879a-17a0-4ba1-83fe-d8fdd0402235" });
+                values: new object[] { "02df8242-c3ef-41bc-aa93-b357f6149fde", "500f3008-71ff-4ef2-a738-58cfbcdeab6e" });
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ScandinavianFood
 
             //dbcontext
             services.AddDbContext<SiteDbContext>(options => options.UseSqlServer(
-                Configuration.GetConnectionString("SiteDbContext")));
+                Configuration.GetConnectionString("AzureConnection")));
 
             //repositories
             services.AddTransient<IPostRepository, PostRepository>();

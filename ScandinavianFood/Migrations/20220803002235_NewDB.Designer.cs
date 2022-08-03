@@ -10,8 +10,8 @@ using ScandinavianFood.Models;
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220228064416_Dates")]
-    partial class Dates
+    [Migration("20220803002235_NewDB")]
+    partial class NewDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -221,11 +221,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "A",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "997c48a4-4ec2-4e27-98a1-b30f51a50be4",
+                            ConcurrencyStamp = "7f187f19-48c9-497f-a1b0-5fe3a06e3330",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2406ee6f-28ff-4cc8-a8d6-ee2ba799ad23",
+                            SecurityStamp = "3be2dd1e-5ef9-4fce-b52b-926d5cb0767d",
                             TwoFactorEnabled = false,
                             UserName = "AlanS"
                         },
@@ -233,11 +233,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "B",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e36b454d-de03-44b2-afa3-0247b41054be",
+                            ConcurrencyStamp = "4c987447-86e8-47cd-a444-4a480c6cc5e4",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "be1fcaf2-c6a9-4473-b9fd-e3ba016b5f9b",
+                            SecurityStamp = "082a17c7-4fb5-4da7-b2be-bd0b63beaa5c",
                             TwoFactorEnabled = false,
                             UserName = "SolaireA"
                         },
@@ -245,11 +245,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "C",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9b5c5d58-a2e6-42f1-8915-2a06aad4ab25",
+                            ConcurrencyStamp = "944273e6-125d-4928-9f6b-e1124557c9f3",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dd6f899a-cc2e-4f0c-ad96-1a818f932962",
+                            SecurityStamp = "18e12b60-955a-49fb-88d0-cf6e1f2224da",
                             TwoFactorEnabled = false,
                             UserName = "LautrecC"
                         });

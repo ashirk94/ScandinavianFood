@@ -10,8 +10,8 @@ using ScandinavianFood.Models;
 namespace ScandinavianFood.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220228053226_UtcTime")]
-    partial class UtcTime
+    [Migration("20220803002858_Scandifood")]
+    partial class Scandifood
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -221,11 +221,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "A",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b56870b8-e56d-4e63-9725-71abe4a338dd",
+                            ConcurrencyStamp = "ce3458bd-689d-4bba-8e4c-715580491bad",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "646db9cb-5a07-4f26-8a72-425b83d19eab",
+                            SecurityStamp = "4f390006-38c5-4f78-8c6d-79089344b587",
                             TwoFactorEnabled = false,
                             UserName = "AlanS"
                         },
@@ -233,11 +233,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "B",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "371f0ec9-8342-4866-a6a7-ddf2f39f69c6",
+                            ConcurrencyStamp = "1ff044f1-29f1-41a0-b3ee-2972aa8c6363",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4ce7fcb0-78b2-462f-92a0-b99c67dac065",
+                            SecurityStamp = "727be093-127d-408f-ac6b-3c91b6d2ebf3",
                             TwoFactorEnabled = false,
                             UserName = "SolaireA"
                         },
@@ -245,11 +245,11 @@ namespace ScandinavianFood.Migrations
                         {
                             Id = "C",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4cf33c9e-d888-49ec-87ad-5ca04c5c7cad",
+                            ConcurrencyStamp = "c7bf3dcf-1b03-4cf3-bb82-3806e22c7b94",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "510c5bfa-13ef-44d4-896c-1246adea3b7b",
+                            SecurityStamp = "111648e3-0668-4f80-82c6-65d3da3b39bd",
                             TwoFactorEnabled = false,
                             UserName = "LautrecC"
                         });
