@@ -32,7 +32,7 @@ a {
 html {
   font-size: 14px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   html {
     font-size: 16px;
   }
@@ -71,4 +71,13 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+@media (max-width: 600px) {
+    #lefse {
+        margin-top: 90px;
+    }
+    .img-fluid {
+        height: 300px;
+    }
 }
