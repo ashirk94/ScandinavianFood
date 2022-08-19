@@ -11,9 +11,9 @@
     <br />
     <div asp-validation-summary="All" class="text-danger"></div>
     <form asp-controller="Forum" method="post">
-        <textarea placeholder="Add a public comment..." class="col-6" asp-for="PostText"></textarea>
+        <textarea placeholder="Add a public comment..." class="comment-box" asp-for="PostText"></textarea>
         <br /><br />
-        <button type="submit" class="btn btn-primary mb-3 col-2">Comment</button>
+        <button type="submit" class="btn btn-primary mb-3 comment-btn">Comment</button>
     </form>
 </div>
 <br />
@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="m-3 d-flex justify-content-center gap-3">
-            <a asp-action="AddReply" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-secondary col-1 mb-3">Reply</a>
-            <a asp-action="AddRating" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-success col-1 mb-3">Rate</a>
+            <a asp-action="AddReply" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-secondary mb-3">Reply</a>
+            <a asp-action="AddRating" asp-controller="Forum" asp-route-id="@(post.ForumPostId)" class="btn btn-success mb-3">Rate</a>
         </div>
         @if (post.ForumReplies != null && post.ForumReplies.Count != 0)
         {
             <h5 class="m-3">Replies:</h5>
-            <div class="d-flex m-3 justify-content-center">
+            <div class="d-flex m-3 justify-content-center flex-wrap">
                 @foreach (var reply in post.ForumReplies)
                 {
                     <div>
@@ -64,7 +64,7 @@
         @if (post.ForumRatings != null && post.ForumRatings.Count != 0)
         {
             <h5 class="m-3">Ratings:</h5>
-            <div class="d-flex m-3 justify-content-center">
+            <div class="d-flex m-3 justify-content-center flex-wrap">
                 @foreach (var rating in post.ForumRatings)
                 {
                     <div>
