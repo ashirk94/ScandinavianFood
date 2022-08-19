@@ -21,14 +21,14 @@
     <span asp-validation-for="Question1" class="text-danger"></span>  
 
     <br />
-    <h4>Are meatballs served larger in Sweden or Norway?</h4>
+    <h4 class="mt-4">Are meatballs served larger in Sweden or Norway?</h4>
 
 
     <input type="radio" asp-for="Question2" value="A" /> A: Sweden <br />
     <input type="radio" asp-for="Question2" value="B" /> B: Norway <br />
     <span asp-validation-for="Question2" class="text-danger"></span>  
     <br />
-    <h4>Lutfisk is: ____________</h4>
+    <h4 class="mt-4">Lutfisk is: ____________</h4>
 
 
     <input type="radio" asp-for="Question3" value="A" /> A: Cod preserved in lye <br />
@@ -36,9 +36,9 @@
     <input type="radio" asp-for="Question3" value="C" /> C: Fermented herring <br />
     <span asp-validation-for="Question3" class="text-danger"></span>  
     <br />
-    <button type="submit" class="btn btn-lg btn-outline-primary m-3 col-2">Submit</button>
+    <button type="submit" class="btn btn-lg btn-outline-primary m-3">Submit</button>
 </form>
-<br /><br /><br /><br />
+<br /><br />
 <h3>User: @username </h3>
 
 @if (Model.Score < 3)
